@@ -1,0 +1,26 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  float: none!important;
+}
+
+.zoom {
+  cursor: zoom-in;
+  transition: transform .2s;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}

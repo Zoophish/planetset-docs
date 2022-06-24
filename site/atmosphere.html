@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Atmosphere - PlanetSet Docs (Beta)</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Atmosphere";
+        var mkdocs_page_input_path = "atmosphere.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> PlanetSet Docs (Beta)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="getting%20started.html">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Planet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="planet.html">Planet Terrain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="terrain%20modifiers.html">Terrain Modifiers</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Atmosphere & Clouds</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="atmosphere.html">Atmosphere</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#nishita-sky">Nishita Sky</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#physical-atmosphere">Physical Atmosphere</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="clouds.html">Clouds</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="instancing.html">Instancing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="water.html">Water</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="misty%20mountains%20tutorial.html">Misty Mountains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="alpine forest tutorial.md">Alpine Forest</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">PlanetSet Docs (Beta)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+          <li>Atmosphere & Clouds &raquo;</li><li>Atmosphere</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>The atmosphere can be enabled in the atmosphere sub-panel. This will add an atmosphere voume around the scene and change the scene's world background.</p>
+<p><img alt="Atmosphere Panel" src="media/atmosphere_panel.jpg" width="50%" /></p>
+<h1 id="atmosphere-settings">Atmosphere Settings</h1>
+<p><strong>Air Density</strong><br />
+The sealevel density of air scattering. Higher values produce a thicker looking atmosphere.</p>
+<p><strong>Air Exp Altitude</strong><br />
+Controls the exponential falloff of air density with altitude. At this altitude, the air density will be 36.7% of the sealevel density.</p>
+<p><strong>Aerosol Density</strong><br />
+The sealevel density of aerosol scattering. Aerosols are particles in the air such as water or smog.</p>
+<p><strong>Aerosol Exp Altitude</strong><br />
+Controls the exponential falloff of aerosol density with altitude.</p>
+<p><strong>Sun Glow</strong><br />
+Controls the proportion of light that is scattered forwards by aerosols into the camera, producing a glow effect around the sun.</p>
+<p><strong>Absorption Factor</strong><br />
+The amount of light that is absorbed by aerosols, making the distance appear darker. For a poulluted air look, this value can be made higher. Humid air on the other hand does not absorb as much light, but could have a higher density.</p>
+<p><strong>Atmosphere Ceiling</strong><br />
+PlanetSet generates an 'atmospheric shell' around the scene when the atmosphere is enabled. This shell extends upwards into the sky until it reaches the <em>ceiling altitude</em>. When using the Nishita sky, the default ceiling value is 800m, which is usually enough to for a scattering/haze effect over the terrain. This value can be changed in the atmosphere panel.</p>
+<p>You may want to make this value much larger to recreate scattering for taller mountains or for high-altitude clouds. However, as the ceiling gets higher, the atmosphere starts becoming more like a true sky. Eventually, it becomes unphysical to illuminate the sky volume with the Nishita sky background. This would be equivalent to outer space looking like the sky, whereas in outer space there is just the direct light coming from the sun and everything else is black. Therefore, the physical atmopshere option simply sets the background the black and introduces a blackbody sun lamp; the colours of the sky are recreated naturally through scattering.</p>
+<hr />
+<h2 id="nishita-sky">Nishita Sky</h2>
+<p>The Nishita sky model is the default sky model built into Blender which users may be familiar with. PlanetSet adds a small scale medium around the planet to add the effect of scattering and haze to the terrain and distant clouds. The light contribution comes from the background which can be thought of as an inifinitely far light source. This is not 100% correct, but produces good results in many cases.</p>
+<h2 id="physical-atmosphere">Physical Atmosphere</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of Blender 3.2, the physical atmosphere is currently unusable due to issues with Cycles. For this reason it is disabled, but I am working to try and get the issue resolved so it can be used again.</p>
+</div>
+<p>When enabled, the background brightness is set to zero (black like outer space) and a sun disk and full-scale atmosphere is placed around the scene. The atmosphere shader mimics Rayleigh, Mie and Ozone scattering. With this setup, most of the lighting comes from actual volumetric scattering in the atmosphere, so it is very important to make sure the volume bounces are sufficient. It requires more samples to render the physical atmosphere, particularly when the sun has a low elevation.</p>
+<p>The results will look subtly different with this sky. As the artist, it is up to you to choose which you prefer, however, the physical sky is designed to be used when:</p>
+<ul>
+<li>You are rendering very high altitude shots (e.g. close to the edge of space) where the atmosphere's ceiling must be very high.</li>
+<li>You are rendering large, high-altitude clouds (like a storm cloud) that would benefit from lighting affected by the atmosphere at high altitude.</li>
+<li>You are rendering dusk/dawn shots - physical atmosphere recreates the Earth's shadow and <a href="https://en.wikipedia.org/wiki/Belt_of_Venus">The Belt of Venus</a>.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="terrain%20modifiers.html" class="btn btn-neutral float-left" title="Terrain Modifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="clouds.html" class="btn btn-neutral float-right" title="Clouds">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2022 Sam Warren</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="terrain%20modifiers.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="clouds.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="extra.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

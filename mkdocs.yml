@@ -1,0 +1,29 @@
+site_url: ""
+site_name: PlanetSet Docs (Beta)
+nav:
+  - General:
+    - Home: index.md
+  - Manual:
+    - Getting Started: getting started.md
+    - Planet:
+      - Planet Terrain: planet.md
+      - Terrain Modifiers: terrain modifiers.md
+    - Atmosphere & Clouds:
+      - Atmosphere: atmosphere.md
+      - Clouds: clouds.md
+    - Instancing: instancing.md
+    - Water: water.md
+  - Tutorials:
+    - Misty Mountains: misty mountains tutorial.md
+    - Alpine Forest: alpine forest tutorial.md
+theme: readthedocs
+copyright: Copyright &copy; 2022 Sam Warren
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.keys
+use_directory_urls: False
+extra_css:
+  - extra.css
+extra_javascript:
+  - extra.js

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Planet Terrain - PlanetSet Docs (Beta)</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Planet Terrain";
+        var mkdocs_page_input_path = "planet.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> PlanetSet Docs (Beta)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="getting%20started.html">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Planet</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="planet.html">Planet Terrain</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="terrain%20modifiers.html">Terrain Modifiers</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Atmosphere & Clouds</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="atmosphere.html">Atmosphere</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="clouds.html">Clouds</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="instancing.html">Instancing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="water.html">Water</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="misty%20mountains%20tutorial.html">Misty Mountains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="alpine forest tutorial.md">Alpine Forest</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">PlanetSet Docs (Beta)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Manual &raquo;</li>
+          <li>Planet &raquo;</li><li>Planet Terrain</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="creating-a-planet-terrain">Creating a Planet Terrain</h1>
+<p>The <em>Planet Panel</em> is used to control the planet terrain settings and to add terrain modifier presets.</p>
+<p><img alt="Planet Panel" src="media/planet_panel.jpg" style="width: 50%;" /></p>
+<p>To create a planet set, enable the checkbox in the Planet Panel header. A new collection called 'Planet Collection' will be added to the scene, which is where all the generated planet content is placed. In the collection, a section of spherical planet surface called 'Planet' will be generated relative to the scene's <a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html#setting-the-active-camera">active camera</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not rename the collections generated by PlanetSet or move generated objects into different collections, as this will cause the references to those objects to be lost.</p>
+</div>
+<h1 id="level-of-detail-lod-settings">Level of Detail (LOD) Settings</h1>
+<h3 id="active-camera">Active Camera</h3>
+<p>The active camera name is displayed at the top of the LOD settings.</p>
+<p>You must have an <a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html#setting-the-active-camera">active camera</a> in the scene for PlanetSet to generate terrain relative to. The camera in the startup scene is active by default, so you can use this.</p>
+<h3 id="base-patch-size">Base Patch Size</h3>
+<p>This controls the size of the un-subdivided terrain quads. The smaller the value, the more detailed the terrain will be, but at the cost of performance. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Whilst making changes to the terrain, you may wish to keep this value relatively large to keep things running smoothly. For final quality renders, this value should be small for sufficient detail.</p>
+</div>
+<p>For production quality images the base patch size can be lowered enough to produce sub-pixel detail. This is necessary for temporal stability in animations where the camera is moving. Note that sub-pixel tessellation will require a powerful computer to run smoothly.</p>
+<h3 id="projection-height">Projection Height</h3>
+<p>This controls the subdivision level falloff into the distance. Inreasing the height spreads the subdivision regions out further and vice versa for decreasing it. The aim is to keep the quads approximately the same size from the viewpoint of the camera as they get further away.  A good way to visualise this is to go into wireframe view and change the value:</p>
+<p>[ADD IMAGE]</p>
+<p>For views close to the ground and with a projection height of ~60m works well. For higher shots you should refer to the camera's altitude (z coordinate). For steep terrain features, you may also want to make the value higher.</p>
+<h3 id="altitude-bias">Altitude Bias</h3>
+<p>When looking over the sea you're probably aware that the higher your altitude, the further away the horizon will appear. At a view height of 1.7m (roughly the height of a person), the distance to the horizon is about 5km. At 10m, the distance is about 11km.</p>
+<p>If the Altitude Bias property is set to 10m, then the terrain will be generated up to 11km away in all directions, since this is where the horizon will be. This is important because if the camera viewpoint is higher, the horizon will appear further away and therefore more altitude bias will be needed. Importantly, the altitude bias will generally need to be greater than the camera altitude because of terrain features that may peek over the horizon, like a mountain.</p>
+<p>A general rule of thumb is to make sure the altitude bias is at least the camera's altitude plus the height of the tallest feature in the terrain. Note the higher the value, the a larger section of planet surface will be generated, which uses more memory.</p>
+<h3 id="local-radius">Local Radius</h3>
+<p>This controls the size of the area around the camera which is also subdivided. It is not related to the planet radius. This is to account for terrain features that may have a significant effect on things inside the camera view. e.g. a shadow cast by a mountain behind the camera.</p>
+<h2 id="planet-settings">Planet Settings</h2>
+<h3 id="radius">Radius</h3>
+<p>This is the radius of the planet which alters the curvature of the surface. The default value is 6371,000m which is the radius of the Earth. Although the terrain may appear flat in the editor, it is actually patch of a large sphere which resultantly produces a horizon.</p>
+<p>You don't really need to change this value unless you wish to mimick different planets.</p>
+<hr />
+<h1 id="settings">Settings</h1>
+<p>To access the planet settings, expand the Settings sub panel in the PlanetSet Panel.</p>
+<p><img alt="Settings Panel" src="media/settings_panel.jpg" style="width: 50%;" /></p>
+<h3 id="delete-planet">Delete Planet</h3>
+<p>Deletes the entire planet collection and all objects inside.</p>
+<p>Once the planet checkbox is enabled, disabling it will only hide the planet in the viewport so that it can conveniently be hidden when needed. To actually delete the planet collection, press the Delete Planet button.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="getting%20started.html" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="terrain%20modifiers.html" class="btn btn-neutral float-right" title="Terrain Modifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2022 Sam Warren</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="getting%20started.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="terrain%20modifiers.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="extra.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
