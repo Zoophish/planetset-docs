@@ -8,7 +8,7 @@ Thanks for buying PlanetSet! If you encounter any bugs or issues please contact 
 
 This version is a beta, so it is not fully featured and will have content updates.
 
-For installation instructions, see [getting started](/getting%20started).
+For installation instructions, see [getting started](getting started.md).
 
 There is also a community Discord chat server available [here](https://discord.gg/g8vXqBUk).
 
