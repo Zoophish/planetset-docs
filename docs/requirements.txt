@@ -1,3 +1,2 @@
-markdown.extensions.attr_list
-markdown.extensions.admonition
-pymdownx.keys
+markdown
+pymdownx
