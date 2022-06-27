@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/about/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/atmosphere/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/clouds/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/getting%20started/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/instancing/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/misty%20mountains%20tutorial/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/planet/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/terrain%20modifiers/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-06-26</lastmod>
+         <loc>https://zoophish.github.io/planetset-docs/water/</loc>
+         <lastmod>2022-06-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

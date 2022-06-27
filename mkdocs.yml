@@ -1,5 +1,9 @@
-site_url: ""
 site_name: PlanetSet Docs (Beta)
+site_description: Latest documentation for the PlanetSet Blender addon.
+#site_url: https://zoophish.github.io/planetset-docs/
+#repo_url: https://github.com/Zoophish/planetset-docs
+edit_uri: edit/master/docs/docs
+
 nav:
   - General:
     - Home: index.md
@@ -22,7 +26,7 @@ markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.keys
-use_directory_urls: False
+#use_directory_urls: False
 extra_css:
   - extra.css
 extra_javascript:
