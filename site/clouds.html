@@ -110,23 +110,24 @@
 <p><img alt="Clouds Panel" src="media/clouds_panel.jpg" style="width: 35%" /></p>
 <hr />
 <h1 id="cloud-layer-types">Cloud Layer Types</h1>
-<h2 id="generic-clouds">Generic Clouds</h2>
-<p>This cloud layer can be used to recreate many different types of clouds by altering the parameters. The cloud domain contains the cloud shader medium. It is a cylinder that follows the curvature of the planet when the radius is large enough, meaning clouds may extend over the horizon.</p>
-<h3 id="settings">Settings</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not translate the cloud domain in the z axis as this will cause the cloud shader to not malfunction. Control altitude using the settings.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The domain settings are currently decoupled from the shader settings due to limitations regarding geometry nodes.</p>
+<p>The domain settings are currently decoupled from the shader settings due to limitations regarding geometry nodes. Make sure to match the domain radius, height and altitude with the shader.</p>
 </div>
+<h2 id="generic-clouds">Generic Clouds</h2>
+<p>This cloud layer can be used to recreate many different types of clouds by altering the parameters. The cloud domain contains the cloud shader medium. It is a cylinder that follows the curvature of the planet when the radius is large enough, meaning clouds may extend over the horizon.</p>
+<p>This cloud shader is more suited to softer clouds that don't have billow features, such as stratus and cirrus clouds.</p>
+<h3 id="settings">Settings</h3>
 <p><strong>Domain Radius</strong><br />
 Radius of the cylindrical cloud domain.</p>
 <p><strong>Domain Height</strong><br />
 Height of the cylindrical cloud domain.</p>
 <p><strong>Domain Altitude</strong>
 The altitude of the domain.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not translate the cloud domain in the z axis as this will cause the cloud shader to not malfunction. Control altitude using the settings.</p>
-</div>
 <p><strong>Height</strong><br />
 The overall depth of the cloud layer.</p>
 <p><strong>Altitude</strong><br />
@@ -147,12 +148,50 @@ Determines how smooth/turbulent the base of the clouds are.</p>
 Like base roughness, but for the top of the clouds. Clouds are typically rougher at the top.</p>
 <p><strong>Sharpness</strong><br />
 Controls how abrupt the cloud edges are (which also makes the edges more dense).</p>
-<p><strong>Wispiness</strong><br />
-Makes the clouds look smoother and less discrete when increased.</p>
+<p><strong>Edge Darkness</strong><br />
+Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powder' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look dark.</p>
+<p><strong>Dark Edge Sharpness</strong><br />
+Defines the sharpness of the dark edges. Higher values will make the edges sharper, but also decrease the overall darkness.</p>
+<p><strong>Stretch Factor</strong><br />
+This parameter stretches the cloud shader domain, causing clouds either to look flatter or taller. Higher values will make the clouds look flatter and vice versa. This can be used to create flatter cirrus or stratus clouds.</p>
+<hr />
+<h2 id="billow-clouds">Billow Clouds</h2>
+<p>This cloud layer is similar to generic clouds, but uses a billow fractal to produce cloud shapes found more often in in cumulus clouds.</p>
+<h3 id="settings_1">Settings</h3>
+<p><strong>Domain Radius</strong><br />
+Radius of the cylindrical cloud domain.</p>
+<p><strong>Domain Height</strong><br />
+Height of the cylindrical cloud domain.</p>
+<p><strong>Domain Altitude</strong>
+The altitude of the domain.</p>
+<p><strong>Height</strong><br />
+The overall depth of the cloud layer.</p>
+<p><strong>Altitude</strong><br />
+The altitude of the cloud layer in the shader (should be identical to domain altitude).</p>
+<p><strong>Radius</strong><br />
+The radius in which the cloud layer terminates completely (should match domain radius).</p>
+<p><strong>Inner Radius</strong><br />
+The radius at which the cloud falloff begins.</p>
+<p><strong>Density</strong><br />
+The overall scattering density of the cloud layer. Higher values yield thicker, darker looking clouds that let less light through.</p>
+<p><strong>Coverage</strong><br />
+Controls the amount of cloud in the domain. A lower value produces smaller clouds with more spacing and vice versa for a higher value.</p>
+<p><strong>Scale</strong><br />
+Controls how large each individual cloud is. Smaller values produce larger looking cloud features.</p>
+<p><strong>Primary Billowness</strong><br />
+Controls the strength of the billow pattern on the base shape of the cloud.</p>
+<p><strong>Secondary Billowness</strong><br />
+Controls the strength of the billow pattern on the cloud details.</p>
+<p><strong>Sharpness</strong><br />
+Controls how abrupt the cloud edges are (which also makes the edges more dense).</p>
+<p><strong>Edge Darkness</strong><br />
+Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powder' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look dark.</p>
+<p><strong>Dark Edge Sharpness</strong><br />
+Defines the sharpness of the dark edges. Higher values will make the edges sharper, but also decrease the overall darkness.</p>
 <hr />
 <h2 id="cirrus-2d">Cirrus 2D</h2>
 <p>High altitude strandy/wispy clouds. This cloud layer is a 2D approximation which works well at high altitudes.</p>
-<h3 id="settings_1">Settings</h3>
+<h3 id="settings_2">Settings</h3>
 <p><strong>Alttiude</strong><br />
 The altitude of the cloud plane.</p>
 <p><strong>Density</strong><br />
@@ -164,7 +203,7 @@ Controls how abrupt the cloud edges are.</p>
 <hr />
 <h2 id="mist-volume">Mist Volume</h2>
 <p>Ground level fog/mist that exponentially decays with altitude. Fog/mist usually occurs at night, dawn or dusk.</p>
-<h3 id="settings_2">Settings</h3>
+<h3 id="settings_3">Settings</h3>
 <p><strong>Radius</strong><br />
 Radius of the cylindrical mist domain.</p>
 <p><strong>Depth</strong><br />
