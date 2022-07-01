@@ -32,7 +32,7 @@ Radius of the cylindrical cloud domain.
 **Domain Height**  
 Height of the cylindrical cloud domain.
 
-**Domain Altitude**
+**Domain Altitude**  
 The altitude of the domain.
 
 **Height**  
@@ -88,7 +88,7 @@ Radius of the cylindrical cloud domain.
 **Domain Height**  
 Height of the cylindrical cloud domain.
 
-**Domain Altitude**
+**Domain Altitude**  
 The altitude of the domain.
 
 **Height**  
