@@ -1,3 +1,3 @@
-markdown.extensions.attr_list
-markdown.extensions.admonition
-pymdownx.keys
+jinja2==3.0.3
+markdown
+pymdown-extensions
