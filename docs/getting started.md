@@ -2,7 +2,7 @@
 
 ## Installation
 
-Your download will contain a file called PlanetSet_Addon.zip which you will need to install and enable by going to `Edit->Preferences->Addons` and `Install`. Then you **must restart Blender** to complete the installation.
+Your download will contain a file called `planetset_xxxx_xx.zip` (depending on version) which you will need to install and enable by going to `Edit->Preferences->Addons`, pressing `Install` and selecting the .zip file. Then you **must restart Blender** to complete the installation.
 
 ![Install Addon](media/install_addon.jpg)
 
