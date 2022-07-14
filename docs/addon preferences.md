@@ -6,7 +6,7 @@ If enabled (default), the viewport shading will be changed to object colors to m
 
 ### Change Viewport Clipping Distance
 
-When enabled (default), the viwport far clip plane is set to the Camera Clipping Distance. Because PlanetSet works in true scale, the far clip plane needs to be set very far away to make things in the distance visible. This can cause z-fighting artifacts in the rasterized viewport, but this will not show up in Cycles renders.
+When enabled (default), the viwport far clip plane is set to the Camera Clipping Distance. Because PlanetSet works in true scale, the far clip plane needs to be set very far away to make things in the distance visible. This can cause [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) artifacts in the rasterized viewport, but this will not show up in Cycles renders.
 
 The scene's main camera will always have its far clip plane set to the camera clipping distance automatically.
 

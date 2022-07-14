@@ -1,4 +1,4 @@
-![Misty Mountains Render](media/misty-moutains/misty-mountains.jpg)
+![Misty Mountains Render](media/misty-moutains/misty_mountains.jpg)
 
 This tutorial will describe step-by-step how the render above was produced using PlanetSet.
 
