@@ -60,8 +60,16 @@ To access the planet settings, expand the Settings sub panel in the PlanetSet Pa
 
 ![Settings Panel](media/settings_panel.jpg){: style="width: 50%;"}
 
+### Adjust Cycles Settings
+
+Configures Cycles to the optimal rendering settings for PlanetSet scenes.
+
 ### Delete Planet
 
 Deletes the entire planet collection and all objects inside.
 
 Once the planet checkbox is enabled, disabling it will only hide the planet in the viewport so that it can conveniently be hidden when needed. To actually delete the planet collection, press the Delete Planet button.
+
+### Documentation
+
+Opens this documentation website in the browser.

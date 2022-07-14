@@ -9,14 +9,13 @@ nav:
     - Home: index.md
   - Manual:
     - Getting Started: getting started.md
-    - Planet:
-      - Planet Terrain: planet.md
-      - Terrain Modifiers: terrain modifiers.md
-    - Atmosphere & Clouds:
-      - Atmosphere: atmosphere.md
-      - Clouds: clouds.md
+    - Planet Terrain: planet.md
+    - Terrain Modifiers: terrain modifiers.md
+    - Atmosphere: atmosphere.md
+    - Clouds: clouds.md
     - Instancing: instancing.md
     - Water: water.md
+    - Addon Preferences: addon preferences.md
   - Tutorials:
     - Misty Mountains: misty mountains tutorial.md
     - Alpine Forest: alpine forest tutorial.md
