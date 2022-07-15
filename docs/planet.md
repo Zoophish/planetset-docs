@@ -2,7 +2,7 @@
 
 The *Planet Panel* is used to control the planet terrain settings and to add terrain modifier presets.
 
-![Planet Panel](media/planet_panel.jpg){: style="width: 50%;"}
+![Planet Panel](media/planet_panel.jpg){: width=50% }
 
 To create a planet set, enable the checkbox in the Planet Panel header. A new collection called 'Planet Collection' will be added to the scene, which is where all the generated planet content is placed. In the collection, a section of spherical planet surface called 'Planet' will be generated relative to the scene's [active camera](https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html#setting-the-active-camera).
 
@@ -22,6 +22,8 @@ You must have an [active camera](https://docs.blender.org/manual/en/latest/edito
 ### Base Patch Size
 This controls the size of the un-subdivided terrain quads. The smaller the value, the more detailed the terrain will be, but at the cost of performance. 
 
+![Base Patch Size Comparison](media/batch_patch_size_comparison.jpg){: .zoom }
+
 !!! Tip
 
     Whilst making changes to the terrain, you may wish to keep this value relatively large to keep things running smoothly. For final quality renders, this value should be small for sufficient detail.
@@ -31,7 +33,7 @@ For production quality images the base patch size can be lowered enough to produ
 ### Projection Height
 This controls the subdivision level falloff into the distance. Inreasing the height spreads the subdivision regions out further and vice versa for decreasing it. The aim is to keep the quads approximately the same size from the viewpoint of the camera as they get further away.  A good way to visualise this is to go into wireframe view and change the value:
 
-[ADD IMAGE]
+![Projection Height Comparison](media/projection_height_comparison.jpg){: .zoom }
 
 For views close to the ground and with a projection height of ~60m works well. For higher shots you should refer to the camera's altitude (z coordinate). For steep terrain features, you may also want to make the value higher.
 
@@ -42,8 +44,12 @@ If the Altitude Bias property is set to 10m, then the terrain will be generated 
 
 A general rule of thumb is to make sure the altitude bias is at least the camera's altitude plus the height of the tallest feature in the terrain. Note the higher the value, the a larger section of planet surface will be generated, which uses more memory.
 
+![Altitude Bias](media/altitude_bias_diagram.jpg)
+
 ### Local Radius
 This controls the size of the area around the camera which is also subdivided. It is not related to the planet radius. This is to account for terrain features that may have a significant effect on things inside the camera view. e.g. a shadow cast by a mountain behind the camera.
+
+![Camera LODs](media/camera_lod_diagram.jpg){: width=60% }
 
 ## Planet Settings
 
