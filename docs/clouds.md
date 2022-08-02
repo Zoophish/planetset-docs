@@ -78,7 +78,7 @@ This parameter stretches the cloud shader domain, causing clouds either to look 
 
 ## Billow Clouds
 
-This cloud layer is similar to generic clouds, but uses a billow fractal to produce cloud shapes found more often in in cumulus clouds.
+This cloud layer is similar to generic clouds, but uses a billow fractal that can produce more natural looking cloud shapes. It uses a much larger shader than power clouds and is therefore slower.
 
 ### Settings
 
@@ -110,7 +110,10 @@ The overall scattering density of the cloud layer. Higher values yield thicker, 
 Controls the amount of cloud in the domain. A lower value produces smaller clouds with more spacing and vice versa for a higher value.
 
 **Scale**  
-Controls how large each individual cloud is. Smaller values produce larger looking cloud features.
+Controls how large each individual cloud is. Smaller values produce larger looking cloud features (excluding height).
+
+**Roughness**  
+Increases the strength of smaller cloud shape variations (also consequently increases coverage slightly).
 
 **Primary Billowness**  
 Controls the strength of the billow pattern on the base shape of the cloud.
@@ -169,3 +172,9 @@ The altitude in which the density is 36.7% that of the sea-level density.
 
 **Base Altitude**  
 The altitude that represents the zero height level for the exponential density. Since the exp altitude cannot be negative, if you would like the exp altitude to be lower than sea level, you can set the base altitude to a negative value.
+
+**Noise Coverage**  
+Similar to cloud coverage, lower values will create larger regions of no mist.
+
+**Noise Scale**  
+The scale of the mist fractal noise (lower values create larger patchy features).

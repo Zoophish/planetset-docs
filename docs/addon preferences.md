@@ -4,6 +4,10 @@
 
 If enabled (default), the viewport shading will be changed to object colors to make objects more distinguishable when the planet terrain is enabled.
 
+### Change Color Management Settings
+
+If enabled (default), the exposure and gamma values in [Color Management](https://docs.blender.org/manual/en/latest/render/color_management.html) will be altered when using the Adjust Cycles Settings operator to account for daylight.
+
 ### Change Viewport Clipping Distance
 
 When enabled (default), the viwport far clip plane is set to the Camera Clipping Distance. Because PlanetSet works in true scale, the far clip plane needs to be set very far away to make things in the distance visible. This can cause [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) artifacts in the rasterized viewport, but this will not show up in Cycles renders.

@@ -85,7 +85,6 @@ The maximum displacement height of the heightfield (in meters).
 **Angle**  
 Angle of rotation of the heightfield (through the z axis).
 
-
 # Effects
 
 Effects modify existing terrain features.
@@ -145,6 +144,24 @@ The lower height level of the terrain. The terrain will be terraced in region be
 
 **From Min**  
 The upper height level of the terrain.
+
+## Proximity Leveller
+
+Levels the terrain (in z axis) towards a target object, relative to the distance to the target object (e.g. a curve). Useful for creating specific areas of flat land for buildings or roads.
+
+![Proximity Leveller](media/proximity_leveller.jpg){: width=60% }
+![Proximity Leveller with Text](media/proximity_leveller_2.jpg){: width=60% }
+
+### Parameters
+
+**Object**  
+The target object (works with curves too).
+
+**Min Distance**  
+The mimimum distance cut-off (in metres) to the target object for the level effect.
+
+**Max Distance**  
+The maximum distance (in metres) to the target object for the level effect. The terrain will be unaffected beyond this distance from the target object.
 
 # Miscellaneous
 

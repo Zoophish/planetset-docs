@@ -25,6 +25,8 @@ markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.keys
+  - toc:
+      permalink: true
 #use_directory_urls: False
 extra_css:
   - extra.css
