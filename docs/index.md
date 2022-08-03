@@ -17,7 +17,7 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 # Changelog
 
 ## 2022.2 (Beta)
-- **Added:** Sun elevation and rotation shortcut to atmosphere settings.
+- **Added:** Sun elevation and rotation shortcut in atmosphere settings.
 - **Added:** [Proximity Leveller](terrain modifiers.md#proximity-leveller) terrain modifier.
 - **Added:** Overhauled the Billow Clouds shader, 'Cloud Fractal 2', which is now faster and provides more consistent details and roughness control.
 - **Added:** Exposure and gamma in color management settings are automatically changed when using the Adjust Cycles Settings operator (can be switched off in addon preferences).
