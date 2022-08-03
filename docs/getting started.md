@@ -12,10 +12,10 @@ The PlanetSet panel is located in the 3D viewport toolbar, which can be toggled 
 
 ![PlanetSet Panel](media/planetset_panel.jpg)
 
-You can enable different parts of the planet by using the checkboxes in the panel headers.
+You can enable/disable different components of the planet with the checkboxes in the panel headers.
 
 ## Render Settings
 
-PlanetSet is made to render through Cycles only and works well with certain render settings. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel. This will increase the number of volume bounces, which is important for realstic clouds and atmosphere. Additionally, the volume step rate will be increased for viewport rendering to make things smoother.
+PlanetSet is made to render through Cycles only and works well with certain render settings. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel. This will increase the number of volume bounces, which is important for realstic clouds and atmosphere. Additionally, the volume step rate will be increased for viewport rendering to make things smoother. The color management gamma and exposure settings are also altered to account for the bright daylight.
 
 ![](media/adjust_cycles_settings.jpg){ width=50% }

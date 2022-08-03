@@ -87,7 +87,7 @@ Angle of rotation of the heightfield (through the z axis).
 
 # Effects
 
-Effects modify existing terrain features.
+The effects modify existing terrain features.
 
 ## Erosion Fractal
 

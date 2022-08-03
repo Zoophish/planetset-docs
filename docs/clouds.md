@@ -13,10 +13,10 @@ If you used the `Adjust Cycles Settings` operator, the viewport [step rate](http
 # Cloud Layer Types
 
 !!! Warning
-    Do not translate the cloud domain in the z axis as this will cause the cloud shader to not malfunction. Control altitude using the settings.
+    Do not translate the cloud domain in the z axis as this will cause the cloud shader to render incorrectly. Control altitude using the settings.
 
 !!! Note
-    The domain settings are currently decoupled from the shader settings due to limitations regarding geometry nodes. Make sure to match the domain radius, height and altitude with the shader.
+    The cloud domain settings are decoupled from the shader settings, so you typically need to match the radius, height and altitude of the domain with the shader.
 
 ## Generic Clouds
 
@@ -57,10 +57,10 @@ Controls the amount of cloud in the domain. A lower value produces smaller cloud
 Controls how large each individual cloud is. Smaller values produce larger looking cloud features.
 
 **Base Roughness**  
-Determines how smooth/turbulent the base of the clouds are.
+Determines how smooth/turbulent the base (lower altitude parts) of the clouds are.
 
 **Upper Roughness**  
-Like base roughness, but for the top of the clouds. Clouds are typically rougher at the top.
+Like base roughness, but for the higher altitude part of the clouds. Clouds in nature are typically rougher at the top.
 
 **Sharpness**  
 Controls how abrupt the cloud edges are (which also makes the edges more dense).
@@ -78,7 +78,7 @@ This parameter stretches the cloud shader domain, causing clouds either to look 
 
 ## Billow Clouds
 
-This cloud layer is similar to generic clouds, but uses a billow fractal that can produce more natural looking cloud shapes. It uses a much larger shader than power clouds and is therefore slower.
+This cloud layer is similar to generic clouds, but uses a billow fractal that can produce more natural looking cloud shapes.
 
 ### Settings
 
@@ -113,22 +113,22 @@ Controls the amount of cloud in the domain. A lower value produces smaller cloud
 Controls how large each individual cloud is. Smaller values produce larger looking cloud features (excluding height).
 
 **Roughness**  
-Increases the strength of smaller cloud shape variations (also consequently increases coverage slightly).
+Controls the smoothness/turbulence of the clouds by increasing the strength of smaller cloud shape variations (also consequently increases coverage slightly).
 
 **Primary Billowness**  
-Controls the strength of the billow pattern on the base shape of the cloud.
+Controls the strength of the billow pattern on the base shape of the cloud. The base shape makes up the large features of the clouds which are later refined with fractal details.
 
 **Secondary Billowness**  
 Controls the strength of the billow pattern on the cloud details.
 
 **Sharpness**  
-Controls how abrupt the cloud edges are (which also makes the edges more dense).
+Controls how abrupt the cloud edges are (makes the edges more dense). Higher values will make the clouds a more homogeneous (uniform) density.
 
 **Edge Darkness**  
-Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powder' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look dark.
+Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powdery' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look artificially dark.
 
 **Dark Edge Sharpness**  
-Defines the sharpness of the dark edges. Higher values will make the edges sharper, but also decrease the overall darkness.
+Defines the sharpness of the dark edges. Higher values will make the dark regions on the edges sharper, but also decrease the overall darkness.
 
 ---
 
@@ -154,7 +154,7 @@ Controls how abrupt the cloud edges are.
 
 ## Mist Volume
 
-Ground level fog/mist that exponentially decays with altitude. Fog/mist usually occurs at night, dawn or dusk.
+Ground level fog/mist that exponentially decays with altitude. Fog/mist works particularly well in night, dawn or dusk lighting.
 
 ### Settings
 
@@ -162,10 +162,10 @@ Ground level fog/mist that exponentially decays with altitude. Fog/mist usually 
 Radius of the cylindrical mist domain.
 
 **Depth**  
-The height of the mist domain.
+The height of the mist domain. A general guideline is to keep this 4x larger than the exp altitude to hide an abrupt end to the fog.
 
 **Density**  
-The sea-level scattering desnity of the mist.
+The sea-level scattering density of the mist.
 
 **Exp Altitude**  
 The altitude in which the density is 36.7% that of the sea-level density.
