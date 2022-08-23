@@ -1,38 +1,12 @@
-Once you have a flat planet surface, you can start creating terrain using geometry node modifiers. PlanetSet comes with some premade geometry node modifiers that can be combined to create various types of landscapes. When you have familiarised yourself with how they work, you can make your own terrain modifiers using the [User Displacement](#user-displacement) template or from scratch.
+Once you have a flat planet surface, you can start creating terrain using geometry nodes. PlanetSet comes with some premade geometry node groups that can be combined to create various types of landscapes.
 
-Premade modifiers can be added via the `Add Terrain Modifier` menu.
-
-![Add Terrain Modifier](media/add_terrain_modifier.jpg)
-
-The terrain modifiers will appear in the [modifier properties]() panel proceeding the planet modifier.
+Preset nodes can be found in the default displacement group.
 
 ---
 
-# Generators
-
-Generators are the starting point in terrain creation that create basic landscape features.
-
-## Noise Terrain
-
-This modifier creates low frequency hilly features which is useful as a starting point for forming a landscape. It's essentially just displacement using a standard noise node.
-
-![Noise Generator](media/noise_terrain.jpg)
-
-### Parameters
-
-**Offset**  
-Shifts the noise position along the xy plane and vertically in z (in meters).
-
-**Scale**  
-Scale of the noise in the world xy plane (does not affect height). Smaller values produce larger features.
-
-**Amplitude**  
-Maximum height of the noise (in meters). *Note* when using large amplitudes, you may wish to apply a negative z offset of half the amplitude value to bring the mid point down to sea level.
-
-
 ## Power Noise Terrain
 
-This is a slightly more complicated modulated noise pattern that creates more believable terrain features such as moutains and valleys.
+This is a slightly more complicated modulated noise pattern that creates more believable terrain features such as moutains and valleys. It is used in the default node network.
 
 ![Power Noise](media/power_noise.jpg)
 
@@ -69,6 +43,9 @@ If you wish to bring in satellite digital elevation maps or heightmaps from othe
 ![Radial Heightfield](media/radial_heightfield.jpg)
 
 ### Parameters
+
+**Image**  
+The image to be used as a heightfield.
 
 **Position**  
 Position of the center of the heightfield in the xy plane along the planet surface. The z component will change the overall elevation of the heightfield which can be used to align the heightmap's sealevel to the planet sealevel. Units are in meters.
@@ -163,12 +140,48 @@ The mimimum distance cut-off (in metres) to the target object for the level effe
 **Max Distance**  
 The maximum distance (in metres) to the target object for the level effect. The terrain will be unaffected beyond this distance from the target object.
 
-# Miscellaneous
+# Mask Nodes
 
-## User Displacement
+Mask nodes output a value between 0 and 1 in basic shapes that can be used to manipulate terrain features. The inverse outputs the opposite value.
 
-This is a geometry nodes template for creating your own displacements. The template works by taking the coordinate of the terrain vertices, and mapping them to a displacement value which should be between 0 and 1 so that amplitude represents the real size of the displacement in meters.
+## Circle Mask
 
-![User Displacement](media/user_displacement.jpg)
+![](media/circle_mask_node.jpg){: width=20% }
 
-In general, you will get the most control with your own node setups - the presets exist mainly as a starting point.
+### Parameters
+
+**Vector**  
+The coordinates for the mask shape to use (typically a position node).
+
+**Center**  
+The center point of the circle.
+
+**Radius**  
+The radius of the circle.
+
+**Falloff Radius**  
+The radius of the smooth transition on the outside of the circle.
+
+## Rectangular Mask
+
+![](media/rectangular_mask_node.jpg){: width=20% }
+
+### Parameters
+
+**Vector**  
+The coordinates for the mask shape to use (typically a position node).
+
+**Center**  
+The center point of the circle.
+
+**Size X**  
+The length of one of the rectangle sides.
+
+**Size Y**  
+The length of the other rectangle side.
+
+**Angle**  
+Specifies the rotation of the rectangle in degrees.
+
+**Falloff Radius**  
+The distance for the smooth transition on the outside of the rectangle.

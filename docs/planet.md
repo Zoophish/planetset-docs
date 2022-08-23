@@ -1,7 +1,5 @@
 # Creating a Planet Terrain
 
-The *Planet Panel* is used to control the planet terrain settings and to add terrain modifier presets.
-
 ![Planet Panel](media/planet_panel.jpg){: width=50% }
 
 To create a planet set, enable the checkbox in the Planet Panel header. A new collection called 'Planet Collection' will be added to the scene, which is where all the generated planet content is placed. In the collection, a section of spherical planet surface called 'Planet' will be generated relative to the scene's [active camera](https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html#setting-the-active-camera).
@@ -12,48 +10,38 @@ To create a planet set, enable the checkbox in the Planet Panel header. A new co
 
 !!! Tip
 
-    Use the [Align Camera To View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to set the main camera view to the current viewport view to avoid low frame rates when repositioning the camera.
+    It is normally too slow to move the main camera around in realtime, you should move the viewport view instead and then use the [Align Camera To View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to set the main camera view to the viewport view.
 
 
-# Level of Detail (LOD) Settings
+# Dice Settings
 
 ### Active Camera
 
-The active camera name is displayed at the top of the LOD settings.
+The active camera name is displayed at the top of the dice settings.
 
 You must have an [active camera](https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html#setting-the-active-camera) in the scene for PlanetSet to generate terrain relative to. The camera in the startup scene is active by default, so you can use this.
 
-### Base Patch Size
-This controls the size of the un-subdivided terrain quads. The smaller the value, the more detailed the terrain will be, but at the cost of performance. 
+!!! Note
 
-![Base Patch Size Comparison](media/batch_patch_size_comparison.jpg){: .zoom }
+    The camera aspect ratio will only update when one of the planet properties are changed. You can also use the `Refresh` operator (available in the operator search menu) to force update everything.
 
-!!! Tip
+### Dice Rate
+The smallest size of a terrain facet in camera space. The smaller the value, the more detail the terrain will have at the expense of memory and processing time.
 
-    Whilst making changes to the terrain, you may wish to keep this value relatively large to keep things running smoothly. For final quality renders, this value should be small for sufficient detail.
+For final renders you should use dicing rates of 1 and below. Note if you see small gaps in the terrain, these will not be visible at lower dicing rates.
 
-For production quality images the base patch size can be lowered enough to produce sub-pixel detail. This is necessary for temporal stability in animations where the camera is moving. Note that sub-pixel tessellation will require a powerful computer to run smoothly.
-
-### Projection Height
-This controls the subdivision level falloff into the distance. Inreasing the height spreads the subdivision regions out further and vice versa for decreasing it. The aim is to keep the quads approximately the same size from the viewpoint of the camera as they get further away.  A good way to visualise this is to go into wireframe view and change the value:
-
-![Projection Height Comparison](media/projection_height_comparison.jpg){: .zoom }
-
-For views close to the ground and with a projection height of ~60m works well. For higher shots you should refer to the camera's altitude (z coordinate). For steep terrain features, you may also want to make the value higher.
+![](media/dice_rate_comparison.jpg){: .zoom }
 
 ### Altitude Bias
-When looking over the sea you're probably aware that the higher your altitude, the further away the horizon will appear. At a view height of 1.7m (roughly the height of a person), the distance to the horizon is about 5km. At 10m, the distance is about 11km.
-
-If the Altitude Bias property is set to 10m, then the terrain will be generated up to 11km away in all directions, since this is where the horizon will be. This is important because if the camera viewpoint is higher, the horizon will appear further away and therefore more altitude bias will be needed. Importantly, the altitude bias will generally need to be greater than the camera altitude because of terrain features that may peek over the horizon, like a mountain.
-
-A general rule of thumb is to make sure the altitude bias is at least the camera's altitude plus the height of the tallest feature in the terrain. Note the higher the value, the a larger section of planet surface will be generated, which uses more memory.
+At a view height of 2m , the distance to the horizon is about 5km. At 10m, the distance is about 11km. The altitude bias adds onto the altitude of the camera, which is important because often large terrain features (like a mountain) peek over the horizon and so extra geometry beyond the horizon is needed.
 
 ![Altitude Bias](media/altitude_bias_diagram.jpg)
 
-### Local Radius
-This controls the size of the area around the camera which is also subdivided. It is not related to the planet radius. This is to account for terrain features that may have a significant effect on things inside the camera view. e.g. a shadow cast by a mountain behind the camera.
+### Clip
+If enabled, will discard planet geometry outside the camera frustum. This can save a lot of memory and terrain processing time. You can extend the limits of the camera frustum clipping by changing the padding settings.
 
-![Camera LODs](media/camera_lod_diagram.jpg){: width=60% }
+### Padding
+Specifies the horizontal and vertical padding for the camera frustum. Can be used to remove gaps near the view edges and to account for significant features near the frustum edges.
 
 ## Planet Settings
 

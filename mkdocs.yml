@@ -10,7 +10,7 @@ nav:
   - Manual:
     - Getting Started: getting started.md
     - Planet Terrain: planet.md
-    - Terrain Modifiers: terrain modifiers.md
+    - Terrain Nodes: terrain nodes.md
     - Atmosphere: atmosphere.md
     - Clouds: clouds.md
     - Instancing: instancing.md
@@ -18,7 +18,6 @@ nav:
     - Addon Preferences: addon preferences.md
   - Tutorials:
     - Misty Mountains: misty mountains tutorial.md
-    - Alpine Forest: alpine forest tutorial.md
 theme: readthedocs
 copyright: Copyright &copy; 2022 Sam Warren
 markdown_extensions:

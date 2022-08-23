@@ -1,3 +1,7 @@
+!!! Warning
+
+    This tutorial is for an outdated version of PlanetSet and is no longer exactly compatible with the settings of 2022.3 and onwards.
+
 ![Misty Mountains Render](media/misty-moutains/misty_mountains.jpg)
 
 This tutorial will describe step-by-step how the render above was produced using PlanetSet.
