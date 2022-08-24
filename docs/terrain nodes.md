@@ -68,7 +68,7 @@ The effects modify existing terrain features.
 
 ## Erosion Fractal
 
-This adds a hydraulic erosion and deposition effect to the existing terrain. It works well over low frequency smooth terrain, but not on terrain with lots of details. The picture below is the Noise Generator example with the erosion fractal added.
+This adds a hydraulic erosion and deposition effect to the existing terrain. It works well over low frequency smooth terrain, but not on terrain that already has lots of details.
 
 #### Parameters
 

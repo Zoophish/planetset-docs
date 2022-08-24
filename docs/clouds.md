@@ -13,7 +13,7 @@ If you used the `Adjust Cycles Settings` operator, the viewport [step rate](http
 # Cloud Layer Types
 
 !!! Warning
-    Do not translate the cloud domain in the z axis as this will cause the cloud shader to render incorrectly. Control altitude using the settings.
+    Do not translate the cloud domain in the z axis as this will cause the cloud shader to render incorrectly. Restrict the translation to the XY plane when moving cloud domains. Control altitude using the settings in the cloud panel.
 
 !!! Note
     The cloud domain settings are decoupled from the shader settings, so you typically need to match the radius, height and altitude of the domain with the shader.

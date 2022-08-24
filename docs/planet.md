@@ -23,12 +23,12 @@ You must have an [active camera](https://docs.blender.org/manual/en/latest/edito
 
 !!! Note
 
-    The camera aspect ratio will only update when one of the planet properties are changed. You can also use the `Refresh` operator (available in the operator search menu) to force update everything.
+    The camera aspect ratio will only update when one of the planet properties are changed. You can also use the `Refresh` operator (available in the [operator search menu](https://docs.blender.org/manual/en/latest/interface/controls/templates/operator_search.html)) to force update everything.
 
 ### Dice Rate
-The smallest size of a terrain facet in camera space. The smaller the value, the more detail the terrain will have at the expense of memory and processing time.
+The dice rate represents the smallest area of a terrain facet in camera space. The smaller the dice rate, the more detail the terrain will have at the expense of memory and processing time.
 
-For final renders you should use dicing rates of 1 and below. Note if you see small gaps in the terrain, these will not be visible at lower dicing rates.
+For final renders you should use smaller dicing rates of 1 and below. Note that if you see small gaps in the terrain, these will not be visible at lower dicing rates.
 
 ![](media/dice_rate_comparison.jpg){: .zoom }
 
@@ -60,7 +60,7 @@ To access the planet settings, expand the Settings sub panel in the PlanetSet Pa
 
 ### Adjust Cycles Settings
 
-Configures Cycles to the optimal rendering settings for PlanetSet scenes.
+Configures Cycles to the optimal rendering settings for PlanetSet scenes. It's reccommended to use this when you set up a new scene using PlanetSet.
 
 ### Delete Planet
 

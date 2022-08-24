@@ -14,14 +14,14 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 
 # Changelog
 
-## 2022.3 (Beta) - 18/08/2022
+## 2022.3 (Beta) - 23/08/2022
 
 2022.3 features a complete overhaul of the planetary terrain implementation, allowing for micropolygon displacement which drastically increases the achievable detail of terrains. Note this is not dependant the Cycles experimental feature and works in the raster viewport preview. See [getting started](getting started.md) for a brief overview of the updated workflow.
 
 ![New per pixel dicing](media/dicing_method_2022_3_update.jpg){: .center width=80% }
 
 - **New:** Novel [dicing method](planet.md#dice-rate) which provides almost perfect per-pixel dicing for more accurate details in terrain and micropolygon displacement without Cycles Experimental.
-- **New:** Terrain displacement is now carried out completely in geometry nodes with no modifier stacks, enabling greater control for artists (existing presets have been coverted to node groups).
+- **New:** Terrain displacement is now carried out completely in geometry nodes with no modifier stacks, enabling greater control for artists (existing presets have been converted to node groups).
 - **New:** Terrain [clip option](planet.md#clip), which when enabled will discard terrrain geometry outside of the camera frustum. For high detail renders this can save a significant amount of memory.
 - **New:** More efficient and precise rectangular camera frustum clipping implementation with [padding](planet.md#padding) options.
 - **New:** Vector displacement (along geometry normals etc) is now properly supported and works with micropolygon dicing.

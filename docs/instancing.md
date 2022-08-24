@@ -21,6 +21,8 @@ Enable all populations by checking the populations panel header.
 
 You can choose to automatically center the population at the 3D cursor or create a new collection to instance from, from the selected objects.
 
+![](media/add_plant_instancer.jpg){: width=50% }
+
 ### Settings
 
 **Collection**  

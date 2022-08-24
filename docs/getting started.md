@@ -24,7 +24,7 @@ PlanetSet is made to render through Cycles only and works well with certain rend
 
 ### Using the Camera
 
-New users can find PlanetSet initially unintuitive and tricky. Upon enabling the planet, if you have deleted the scenes main camera you will see no terrain, so you need to make sure there is a camera present. PlanetSet will always generate terrain inside the active camera view, so initially you might be confused as to why only a small chunk of terrain is visible.
+New users can find PlanetSet initially unintuitive and tricky. Upon enabling the planet, if you have deleted the scene's main camera you will see no terrain, so you need to make sure there is a camera present. PlanetSet will always generate terrain inside the active camera view, so initially you might be confused as to why only a small chunk of terrain is visible.
 
 ![](media/default_startup_planet.jpg){: width=70% }
 ![](media/default_startup_planet_2.jpg){: width=70% }
