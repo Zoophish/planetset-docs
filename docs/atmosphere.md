@@ -1,3 +1,5 @@
+![](media/atmosphere.jpg){: width=80% }
+
 The atmosphere can be enabled in the atmosphere sub-panel. This will add an atmosphere domain around the scene and change the scene's world background.
 
 ![Atmosphere Panel](media/atmosphere_panel.jpg){ width=50% }
@@ -25,7 +27,7 @@ The amount of light that is absorbed by aerosols, making the distance appear dar
 **Atmosphere Ceiling**  
 PlanetSet generates an 'atmospheric shell' around the scene when the atmosphere is enabled. This shell extends upwards into the sky until it reaches the *ceiling altitude*, which can be changed in the atmosphere panel.
 
-You may want to make this value much larger to recreate scattering for taller mountains or for high-altitude clouds. However, as the ceiling gets higher, the atmosphere starts becoming more like a true sky. Eventually, it becomes unphysical to illuminate the sky volume with the Nishita sky background. This would be equivalent to outer space looking like the sky, whereas in outer space there is just the direct light coming from the sun and everything else is black. Therefore, the physical atmopshere option simply sets the background the black and introduces a blackbody sun lamp; the colours of the sky are recreated naturally through scattering.
+You may want to make this value much larger to recreate scattering for taller mountains or for high-altitude clouds. However, as the ceiling gets higher, the atmosphere starts becoming more like a true sky. Eventually, it becomes unphysical to illuminate the sky volume with the Nishita sky background. This would be equivalent to outer space looking like the sky, whereas in outer space there is just the direct light coming from the sun and everything else is black. Therefore, the physical atmopshere option simply sets the background to black with a sun disk, and the colours of the sky are recreated naturally through volumetric scattering.
 
 ---
 
@@ -35,14 +37,6 @@ The Nishita sky model is the default sky model built into Blender which users ma
 
 ## Physical Atmosphere
 
-!!! Warning
+![](media/space.jpg)
 
-    As of Blender 3.2, the physical atmosphere is currently unusable due to issues with Cycles. For this reason it is disabled, but I am working to try and get the issue resolved so it can be used again.
-
-When enabled, the background brightness is set to zero (black like outer space) and a sun disk and full-scale atmosphere is placed around the scene. The atmosphere shader mimics Rayleigh, Mie and Ozone scattering. With this setup, most of the lighting comes from actual volumetric scattering in the atmosphere, so it is very important to make sure the volume bounces are sufficient. It requires more samples to render the physical atmosphere, particularly when the sun has a low elevation.
-
-The results will look subtly different with this sky. As the artist, it is up to you to choose which you prefer, however, the physical sky is designed to be used when:
-
-- You are rendering very high altitude shots (e.g. close to the edge of space) where the atmosphere's ceiling must be very high.
-- You are rendering large, high-altitude clouds (like a storm cloud) that would benefit from lighting affected by the atmosphere at high altitude.
-- You are rendering dusk/dawn shots - physical atmosphere recreates the Earth's shadow and [The Belt of Venus](https://en.wikipedia.org/wiki/Belt_of_Venus).
+Enabling the physical atmosphere will often provide more realstic results, since all the sky color contribution comes from the atmosphere volume shader. It is particularly effective at high altitude shots and sunset/dawn shots. It also makes very high-altitude clouds look more realistic.

@@ -1,6 +1,6 @@
 ![PlanetSet](media/planetset_logo.png){: .center width=66%}
 
-**Current Version:** 2022.3 (Beta)
+**Current Version:** 2022.4 (Beta)
 
 # Welcome to PlanetSet
 
@@ -13,6 +13,26 @@ For installation instructions, see [getting started](getting started.md).
 The docs should cover every feature of PlanetSet and provide some basic tutorials. You can use the search bar to search the docs for keywords. If you think something is missing, please contact me.
 
 # Changelog
+
+## 2022.4 (Beta) - Yet to be released
+
+![](media/space.jpg){: .center width=80% }
+
+- **New:** [Freeze option](planet.md#freeze) in the planet settings that stops the terrain from updating whilst enabled. Useful for moving/animating the active camera.
+- **New:** [Physical atmosphere](atmosphere.md#physical-atmosphere) option available (limited to 1/5th scale).
+- **New:** [Ridged mountains](terrain nodes.md#ridged-mountains) procedural node.
+- **New:** Procedural [stones](terrain nodes.md#stones) node.
+- **New:** [Cliff rocks](terrain nodes.md#cliff-rocks) effect node.
+- **New:** [Strata](terrain nodes.md#strata) effect node.
+- **New:** [Normal and vector displacement](terrain nodes.md#normal-displacement) node groups.
+- **New:** Custom UI icon.
+- **Improved** Significantly increased efficiency of terrain dicing in response to high camera altitudes.
+- **Improved** Atmosphere shader now accounts for ozone layer absorption (more accurate dawn/dusk).
+- **Improved:** Removed the vector input from mask nodes as they are misleading.
+- **Improved:** Improved default scene.
+- **Fix:** Atmosphere not updating correctly with camera altitude.
+- **Fix:** Rectangular mask falloff.
+- **Docs:** Numerous improvements and additions to the docs.
 
 ## 2022.3 (Beta) - 23/08/2022
 
@@ -36,7 +56,7 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 
 ## 2022.2 (Beta) - 03/08/2022
 - **New:** Sun elevation and rotation shortcut in atmosphere settings.
-- **New:** [Proximity Leveller](terrain modifiers.md#proximity-leveller) terrain modifier.
+- **New:** [Proximity Leveller](terrain nodes.md#proximity-leveller) terrain modifier.
 - **New:** Overhauled the Billow Clouds shader, 'Cloud Fractal 2', which is faster and provides more consistent details and roughness control.
 - **New:** Exposure and gamma in color management settings are automatically changed when using the Adjust Cycles Settings operator (can be switched off in addon preferences).
 - **New:** Auto Leaf convenience operator to automatically set up leaf materials (alpha and translucency) if they are not already.

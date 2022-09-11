@@ -39,14 +39,14 @@ The planet surface starts off as a section of smooth sphere. Using geometry node
 
 ![](media/displacement_node_location.jpg)
 
-The default node network template uses some noise patterns to generate a generic looking terrain and masks it with a large circle to create a flat valley (nodes shown below). There are [terrain node group presets](terrain nodes.md) available in this network to help you get started.
+The default node network template uses some noise patterns to generate a generic looking terrain and masks it with a large circle to create a flat valley (nodes shown below). There are [terrain node group presets](terrain nodes.md) available in this network to help you create landscapes.
 
 ![](media/default_displacement_nodes.jpg){: .zoom }
 
-Displacement works similarly to how it would normally in Blender, except the displacement effect is achieved by offsetting vertices using a [Set Position Node](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/geometry/set_position.html).
+Displacement works similarly to how it would normally in Blender, but by instead passing the terrain geometry through a [displacement node](terrain nodes.md#normal-displacement).
 
-![](media/displacement_set_position.jpg){: width=70% }
+![](media/displacement_set_position.jpg){: width=40% }
 
-The vertices are displaced along a vector that should be [normalised](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/vector/vector_math.html#properties) to unit length to preserve consistent scaling. The displacement is typically the surface normal, but you can change this to achieve more complex displacement shapes.
+Displacement is typically done along the surface normal, but you can use the [vector displacement node](terrain nodes.md#vector-displacement) to achieve more complex shapes.
 
-Displacement effects can be stacked using multiple passes of the Set Position node. The default node network has two displacement passes: the first for the main terrain and the second for ground details.
+Displacement effects can be stacked in multiple passes. The default node network has two displacement passes: the first for the main terrain and the second for ground details.

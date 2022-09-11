@@ -1,3 +1,5 @@
+![](media/cloud_bw.jpg)
+
 # Clouds Panel
 
 The clouds panel is located in the atmosphere panel. To enable clouds, check the check box in the clouds panel header.
@@ -10,15 +12,26 @@ If you used the `Adjust Cycles Settings` operator, the viewport [step rate](http
 
 ---
 
+# Cloud Layers
+
+## Moving Clouds
+
+Do not translate the cloud domain in the z axis as this will cause the cloud shader to render incorrectly. When grabbing the cloud domain (++g++), restrict the translation to the XY plane by pressing ++shift+z++. Control altitude using the settings in the cloud panel.
+
+![Moving Clouds](media/moving_clouds.gif){: width=70% }
+
+## Domain & Shader Settings
+Cloud layers have separate settings for the domain and cloud shader. The domain is the geometry that Cycles will treat as a volume. The clouds are rendered inside the volume by a cloud shader. The cloud domain settings are decoupled from the shader settings, so you typically need to match the radius, height and altitude of the domain with the shader.
+
+![](media/cloud_settings.jpg){: width=40% }
+
+---
+
 # Cloud Layer Types
 
-!!! Warning
-    Do not translate the cloud domain in the z axis as this will cause the cloud shader to render incorrectly. Restrict the translation to the XY plane when moving cloud domains. Control altitude using the settings in the cloud panel.
-
-!!! Note
-    The cloud domain settings are decoupled from the shader settings, so you typically need to match the radius, height and altitude of the domain with the shader.
-
 ## Generic Clouds
+
+![Generic Clouds](media/generic_clouds.jpg)
 
 This cloud layer can be used to recreate many different types of clouds by altering the parameters. The cloud domain contains the cloud shader medium. It is a cylinder that follows the curvature of the planet when the radius is large enough, meaning clouds may extend over the horizon.
 
@@ -36,7 +49,7 @@ Height of the cylindrical cloud domain.
 The altitude of the domain.
 
 **Height**  
-The overall depth of the cloud layer.
+Exactly the same as domain height, but this value is fed to the shader instead of the domain geometry. For most purposes, this should match the domain's height.
 
 **Altitude**  
 The altitude of the cloud layer in the shader (should be identical to domain altitude).
@@ -77,6 +90,8 @@ This parameter stretches the cloud shader domain, causing clouds either to look 
 ---
 
 ## Billow Clouds
+
+![Billow Clouds](media/billow_clouds.jpg)
 
 This cloud layer is similar to generic clouds, but uses a billow fractal that can produce more natural looking cloud shapes.
 

@@ -77,3 +77,12 @@ How much influence the noise modulation has on the density.
 
 **Noise Scale**  
 The size of the noise features.
+
+---
+
+## Autoleaf
+
+The autoleaf operator is a utility that can be used to automatically set up leaf materials on imported plant meshes. It adds a transparency shader for the leaf texture alpha channel and a translucency shader.
+
+The autoleaf operator can be found in the operator search menu (++space++). It will apply changes to the material in actively selected material slot.
+
