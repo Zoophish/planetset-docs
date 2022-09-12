@@ -14,7 +14,7 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 
 # Changelog
 
-## 2022.4 (Beta) - Yet to be released
+## 2022.4 (Beta) - 12/09/2022
 
 ![](media/space.jpg){: .center width=80% }
 
