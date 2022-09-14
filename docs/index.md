@@ -1,6 +1,4 @@
-![PlanetSet](media/planetset_logo.png){: .center width=66%}
-
-**Current Version:** 2022.4 (Beta)
+![PlanetSet](media/planetset_logo.png){: .center width=69%}
 
 # Welcome to PlanetSet
 
