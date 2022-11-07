@@ -102,6 +102,14 @@ The baseline radius of the stones (does not affect height).
 **Stone Height**  
 The vertical height scaling of the stones (in meters).
 
+## Ocean Texture
+
+Texture that mimicks ocean waves. Can be used on the ocean displacement node group to create 3D displacement on water bodies.
+
+### Parameters
+
+**Scale**  
+The xy scale of the stone center points (higher value increases stone frequency).
 
 # Effects
 

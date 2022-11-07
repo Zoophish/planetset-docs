@@ -17,3 +17,7 @@ The scene's main camera will always have its far clip plane set to the camera cl
 ### Camera Clipping Distance
 
 The far clip plane distance for the main camera, and viewport if enabled. For Earth scale planets, the default value should be sufficient.
+
+### Change Cycles Settings on Init
+
+Convenience option for running the `Change Cycles Settings` operator when PlanetSet is enabled. Use this to save yourself from manually running the Change Cycles Settings operator every time you make a PlanetSet scene.

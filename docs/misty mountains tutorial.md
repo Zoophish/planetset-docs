@@ -1,6 +1,6 @@
 !!! Warning
 
-    This tutorial is for an outdated version of PlanetSet and is no longer exactly compatible with the settings of 2022.3 and onwards.
+    This tutorial is for an outdated version of PlanetSet and is no longer compatible with PlanetSet 2022.3 and onwards.
 
 ![Misty Mountains Render](media/misty-moutains/misty_mountains.jpg)
 

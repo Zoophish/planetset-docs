@@ -16,37 +16,49 @@ You can enable/disable different components of the planet with the checkboxes in
 
 ## Understanding the PlanetSet Workflow
 
-### Render Settings
+### Render Settings (Important)
 
-PlanetSet is made to render through Cycles only and works well with certain render settings. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel. This will increase the number of volume bounces, which is important for realstic clouds and atmosphere. Additionally, the volume step rate will be increased for viewport rendering to make things smoother. The color management gamma and exposure settings are also altered to account for the bright daylight.
+PlanetSet is made to render through Cycles only and requires certain render settings to produce realistic results. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel.
+
+This will change the path length limits, which is important for high-quality renders. For example, the exact appearance of clouds largely depends on the effects of multiple scattering, which can require as much as 250 volume bounces for correct results. The same principle applies to other volumetric scattering processes like mist and atmosphere. Additionally, trees with many alpha cut-out  leaves and translucent shaders require potentially hundreds of transmissive light bounces to render correctly. For these reasons, it is reccommended to change these settings whenerv creating a scene with PlanetSet.
+
+Additionally, the viewport renderer volume step rate will be increased to make previews more responsive. The color management gamma and exposure settings are also altered to account for the bright daylight.
 
 ![](media/adjust_cycles_settings.jpg){ width=50% }
 
 ### Using the Camera
 
-New users can find PlanetSet initially unintuitive and tricky. Upon enabling the planet, if you have deleted the scene's main camera you will see no terrain, so you need to make sure there is a camera present. PlanetSet will always generate terrain inside the active camera view, so initially you might be confused as to why only a small chunk of terrain is visible.
+Upon enabling the planet, if you have deleted the scene's main camera you will see no terrain, so you need to make sure there is a camera present. PlanetSet will always generate terrain inside the active camera view, so initially you might be confused as to why only a small chunk of terrain is visible.
 
 ![](media/default_startup_planet.jpg){: width=70% }
 ![](media/default_startup_planet_2.jpg){: width=70% }
 
-The terrain generation process has some latency, depending on the [dicing rate](planet.md#dice-rate). It is **not recommended** to grab the camera and move it with the mouse cursor or to use the fly cam whilst locked to the camera view, as the latency will usually make this unusable. Instead, you can find the view you want using the viewport flycam, then use the [Align Camera to View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to change the cmaera view to the viewport view.
+The terrain generation process has some latency, depending on the [dicing rate](planet.md#dice-rate). You can [freeze](planet.md#freeze) the terrain to move the camera around without the latency, then unfreeze it when finished. Alternatively, you can find the view you want using the viewport flycam, then use the [Align Camera to View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to change the cmaera view to the viewport view.
 
-You might see [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) on distant terrain features due to the increased depth buffer limit. This artifact is only visible in the viewport preview and will not appear in the Cycles render. This way, you can still see terrain features many kilometers away. You can disable this feature in the [addon preferences](addon preferences.md).
+You might see [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) on distant terrain features due to the increased depth buffer limit. This artifact is only visible in the viewport preview and will not appear in the Cycles render. This way, you can see terrain features many kilometers away in the viewport. You can change the depth buffer settings in the [addon preferences](addon preferences.md).
 
 ### Displacement Nodes
 
-The planet surface starts off as a section of smooth sphere. Using geometry nodes, this surface is then displaced as along the planets normal (or any vector you like). To access the displacement node group, select the planet surface and open the geometry node editor. Find the node group called 'Displacement' and open the group by pressing ++tab++ with it selected.
+The planet surface starts off as a section of smooth sphere. Using geometry nodes, this surface is then displaced as along the planets normal (or any vector you like) and the adaptive subdivision for the displacement is handled automatically. To access the displacement node group, open the geometry nodes editor and press the Terrain Nodes button in the top right corner. You can also pin the nodes so they don't go away when other objects are selected.
+
+![](media/open_nodes.jpg){: .zoom }
+
+Alternatively, you find the node group called 'Displacement' in the Planet modifier and open the group by pressing ++tab++ with it selected.
 
 ![](media/displacement_node_location.jpg)
 
 The default node network template uses some noise patterns to generate a generic looking terrain and masks it with a large circle to create a flat valley (nodes shown below). There are [terrain node group presets](terrain nodes.md) available in this network to help you create landscapes.
 
-![](media/default_displacement_nodes.jpg){: .zoom }
+![](media/default_displacement_nodes.jpg)
 
 Displacement works similarly to how it would normally in Blender, but by instead passing the terrain geometry through a [displacement node](terrain nodes.md#normal-displacement).
 
 ![](media/displacement_set_position.jpg){: width=40% }
 
-Displacement is typically done along the surface normal, but you can use the [vector displacement node](terrain nodes.md#vector-displacement) to achieve more complex shapes.
+Displacement is typically done along the surface normal, but you can use the [vector displacement node](terrain nodes.md#vector-displacement) to displace along any arbitrary direction.
 
-Displacement effects can be stacked in multiple passes. The default node network has two displacement passes: the first for the main terrain and the second for ground details.
+Displacements can be stacked in multiple passes. The default node network has two displacement passes: the first for the main terrain and the second for ground details.
+
+<! --- ### Working with Fractals
+
+PlanetSet uses a unique adaptive subdivision process that allows for very high-detail terrain. To get realistic details, it's highly effective to use fractal noises. Fractal noises produce self-similar 'inifnite' patterns that are good at mimicking patterns in nature. PlanetSet comes with some premade noises, and you can design your own in geometry nodes using the [fractal noise designer]() feature. >

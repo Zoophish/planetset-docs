@@ -12,7 +12,20 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 
 # Changelog
 
+## 2022.5 (Beta) - Yet to be released
+
+- **New:** Overhauled [water system](water.md): water is now created and controlled through the [water bodies] panel.
+- **New:** New realistic water shader with coloring options, displacement and [more]().
+- **New:** Terrain nodes [shortcut button]() in the geometry nodes panel.
+- **New:** Option to center cloud domains over the 3D cursor when adding a new cloud layer.
+- **New:** Option to automatically switch to Cycles with optimal settings when PlanetSet is enabled. See [here](addon preferences.md#change-cycles-settings-on-init).
+- **Improved:** Generic cloud shader density is now modulated with height.
+- **Fix:** Physical sky not switching back to Nishita sky after saving .blend file.
+- **Docs:** New minimalist theme to the documentation website.
+
 ## 2022.4 (Beta) - 12/09/2022
+
+![PlanetSet](media/planetset_logo.png){: .center width=60%}
 
 ![](media/space.jpg){: .center width=80% }
 
@@ -24,8 +37,8 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 - **New:** [Strata](terrain nodes.md#strata) effect node.
 - **New:** [Normal and vector displacement](terrain nodes.md#normal-displacement) node groups.
 - **New:** Custom UI icon.
-- **Improved** Significantly increased efficiency of terrain dicing in response to high camera altitudes.
-- **Improved** Atmosphere shader now accounts for ozone layer absorption (more accurate dawn/dusk).
+- **Improved:** Significantly increased efficiency of terrain dicing in response to high camera altitudes.
+- **Improved:** Atmosphere shader now accounts for ozone layer absorption (more accurate dawn/dusk).
 - **Improved:** Removed the vector input from mask nodes as they are misleading.
 - **Improved:** Improved default scene.
 - **Fix:** Atmosphere not updating correctly with camera altitude.
@@ -44,7 +57,7 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 - **New:** More efficient and precise rectangular camera frustum clipping implementation with [padding](planet.md#padding) options.
 - **New:** Vector displacement (along geometry normals etc) is now properly supported and works with micropolygon dicing.
 - **New:** New options when adding a Plant Instancer to center to the 3D cursor and automatically create a collection from the selection.
-- **New:** [Mask shape nodes](terrain modifiers.md) that can be used to manipulate terrain.
+- **New:** [Mask shape nodes](terrain nodes.md) that can be used to manipulate terrain.
 - **New:** The terrain presets are no longer located in the planet panel, but are instead available inside the node group.
 - **New:** The default planet surface has a preset applied.
 - **Improvement:** [Altitude bias](planet.md#altitude-bias) now adds onto the camera altitude automatically.

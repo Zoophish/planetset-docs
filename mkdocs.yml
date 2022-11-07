@@ -16,9 +16,11 @@ nav:
     - Instancing: instancing.md
     - Water: water.md
     - Addon Preferences: addon preferences.md
-  - Tutorials:
-    - Misty Mountains: misty mountains tutorial.md
-theme: readthedocs
+theme:
+  name: material
+  palette:
+    primary: black
+  # logo: planetset_logo_white.svg
 copyright: Copyright &copy; 2022 Sam Warren
 markdown_extensions:
   - attr_list
