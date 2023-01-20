@@ -8,8 +8,6 @@ This version is a beta, so it is not fully featured and will have content update
 
 For installation instructions, see [getting started](getting started.md).
 
-The docs should cover every feature of PlanetSet and provide some basic tutorials. You can use the search bar to search the docs for keywords. If you think something is missing, please contact me.
-
 # Changelog
 
 ## 2022.5 (Beta) - 20/01/2023
