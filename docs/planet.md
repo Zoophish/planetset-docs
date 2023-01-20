@@ -12,12 +12,12 @@ To create a planet set, enable the checkbox in the Planet Panel header. A new co
 
 ## Moving the Camera
 
-It is normally too slow to move the main camera around in realtime with small dice rates. You can use the freeze option to stop updating the planet terrain whilst finding new camera angles. Alternatively, you can use the [Align Camera To View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to set the main camera view to the viewportview.
+It is normally too slow to move the main camera around in realtime with small dice rates. You can use the [freeze option](#freeze) to stop updating the planet terrain whilst finding new camera angles. Alternatively, you can use the [Align Camera To View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to set the main camera view to the viewportview.
 
 
 # Dice Settings
 
-PlanetSet's terrain system works by adaptively 'dicing' (subdividing) the terrain relative to the camera. This way, the memory is used much more efficiently, allowing for very large and detailed terrains.
+PlanetSet's terrain system works by adaptively 'dicing' (a.k.a subdividing or tessellating) the terrain relative to the camera. It works such that every facet of the terrain takes up the same amount of screen area, which is set by the [dicing rate](#dicing-rate). This way, it is possible to create very large and detailed terrains without using too much memory.
 
 ![](media/dice_settings.jpg){: width=40% }
 
@@ -31,20 +31,22 @@ You must have an [active camera](https://docs.blender.org/manual/en/latest/edito
 
     The camera aspect ratio will only update when one of the planet properties are changed. You can also use the `Refresh` operator (available in the [operator search menu](https://docs.blender.org/manual/en/latest/interface/controls/templates/operator_search.html)) to force update everything.
 
-### Dice Rate
-The dice rate represents the smallest area of a terrain facet in camera space. The smaller the dice rate, the more detail the terrain will have at the expense of memory and processing time.
+### Dicing Rate
+The dicing rate controls the number of tessellated facets per pixel in the camera space. It is therefore dependent on the render output resolution.
 
-For final renders you should use smaller dicing rates of 1 and below. Note that if you see small gaps in the terrain, these will not be visible at lower dicing rates.
+There are two dicing rate options available for the viewport and final render. For final quality renders, the dicing rate is typically greater than 1 (i.e. at least one face per pixel).
 
-![](media/dice_rate_comparison.jpg){: .zoom }
+As an example, if the output resolution is 1920 x 1080 and the terrain is fully in view, there would be approximately 2 million faces (one per pixel) on the terrain mesh if the dicing rate was 1.
+
+Note that if you see small gaps in the terrain, these will not be visible at lower dicing rates.
 
 ### Altitude Bias
 At a view height of 2m , the distance to the horizon is about 5km. At 10m, the distance is about 11km. The altitude bias adds onto the altitude of the camera, which is important because often large terrain features (like a mountain) peek over the horizon and so extra geometry beyond the horizon is needed.
 
-![Altitude Bias](media/altitude_bias_diagram.jpg)
+![Altitude Bias](media/altitude_bias_diagram.svg)
 
 ### Clip
-If enabled, will discard planet geometry outside the camera frustum. This can save a lot of memory and terrain processing time. You can extend the limits of the camera frustum clipping by changing the padding settings.
+If enabled, will discard planet geometry outside the camera frustum. This can save some memory and terrain processing time as well as help with shading effects that rely on geometry outside the camera frustum. You can additionally extend the limits of the camera frustum clipping by changing the padding settings.
 
 ### Padding
 Specifies the horizontal and vertical padding for the camera frustum. Can be used to remove gaps near the view edges and to account for significant features near the frustum edges.
@@ -59,9 +61,7 @@ When enabled, the terrain will not update. This can be useful when moving the ac
 ## Planet Settings
 
 ### Radius
-This is the radius of the planet which alters the curvature of the surface. The default value is 6371,000m which is the radius of the Earth. Although the terrain may appear flat in the editor, it is actually patch of a large sphere which resultantly produces a horizon.
-
-You don't really need to change this value unless you wish to mimick different planets.
+This is the radius of the planet which alters the curvature of the surface. The default value is 6371,000m which is the radius of the Earth. Although the terrain may appear flat in the viewport, it is in fact a large patch of a sphere which resultantly produces a horizon.
 
 ---
 

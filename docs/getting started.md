@@ -6,29 +6,29 @@ Your download will contain a file called `planetset_xxxx_xx.zip` (depending on v
 
 ![Install Addon](media/install_addon.jpg)
 
-## User Interface
+## User Interface Introduction
 
-The PlanetSet panel is located in the 3D viewport toolbar, which can be toggled by pressing ++n++.
+The PlanetSet panel is located in the 3D viewport toolbar, which can be toggled by pressing ++n++. The panel contains the majority of the functionality for PlanetSet.
 
 ![PlanetSet Panel](media/planetset_panel.jpg)
 
-You can enable/disable different components of the planet with the checkboxes in the panel headers.
+You can quickly enable/disable different components of the planet with the checkboxes in the panel headers. If a camera is present, you can enable the planet, which will create a planetary terrain in the scene.
 
 ## Understanding the PlanetSet Workflow
 
 ### Render Settings (Important)
 
-PlanetSet is made to render through Cycles only and requires certain render settings to produce realistic results. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel.
+PlanetSet is made to render through Cycles only and requires certain render settings to produce realistic results. These settings can be automatically set up using the `Adjust Cycles Settings` operator, which is located in the settings sub panel. You can optionally make this happen automatically when enabling PlanetSet by going into the addon preferences.
 
-This will change the path length limits, which is important for high-quality renders. For example, the exact appearance of clouds largely depends on the effects of multiple scattering, which can require as much as 250 volume bounces for correct results. The same principle applies to other volumetric scattering processes like mist and atmosphere. Additionally, trees with many alpha cut-out  leaves and translucent shaders require potentially hundreds of transmissive light bounces to render correctly. For these reasons, it is reccommended to change these settings whenerv creating a scene with PlanetSet.
+The adjustment will change the path length limits, which is important for high-quality renders. For example, the exact appearance of clouds largely depends on the effects of multiple scattering, which can require as much as 250 volume bounces. The same principle applies to other volumetric scattering processes like mist and atmosphere. Additionally, trees with many alpha cut-out leaves and translucent shaders require potentially hundreds of transmissive light bounces to render correctly. For these reasons, it is reccommended to change these settings whenever creating a scene with PlanetSet.
 
-Additionally, the viewport renderer volume step rate will be increased to make previews more responsive. The color management gamma and exposure settings are also altered to account for the bright daylight.
+Additionally, the viewport renderer volume step rate will be increased to make Cycles previews more responsive. The color management gamma and exposure settings are also altered to account for the bright daylight.
 
 ![](media/adjust_cycles_settings.jpg){ width=50% }
 
 ### Using the Camera
 
-Upon enabling the planet, if you have deleted the scene's main camera you will see no terrain, so you need to make sure there is a camera present. PlanetSet will always generate terrain inside the active camera view, so initially you might be confused as to why only a small chunk of terrain is visible.
+Upon enabling the planet, there must be a camera present in the scene. PlanetSet will generate terrain inside the active camera frustum by default. You can reassign another camera by seleting it and using the `Reassign Camera` operator (found in search menu).
 
 ![](media/default_startup_planet.jpg){: width=70% }
 ![](media/default_startup_planet_2.jpg){: width=70% }
@@ -39,13 +39,19 @@ You might see [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) on distant 
 
 ### Displacement Nodes
 
+### Finding the Terrain Nodes - Method 1:
+
 The planet surface starts off as a section of smooth sphere. Using geometry nodes, this surface is then displaced as along the planets normal (or any vector you like) and the adaptive subdivision for the displacement is handled automatically. To access the displacement node group, open the geometry nodes editor and press the Terrain Nodes button in the top right corner. You can also pin the nodes so they don't go away when other objects are selected.
 
 ![](media/open_nodes.jpg){: .zoom }
 
+### Finding the Terrain Nodes - Method 2:
+
 Alternatively, you find the node group called 'Displacement' in the Planet modifier and open the group by pressing ++tab++ with it selected.
 
 ![](media/displacement_node_location.jpg)
+
+### Default Terrain Nodes
 
 The default node network template uses some noise patterns to generate a generic looking terrain and masks it with a large circle to create a flat valley (nodes shown below). There are [terrain node group presets](terrain nodes.md) available in this network to help you create landscapes.
 

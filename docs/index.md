@@ -12,16 +12,30 @@ The docs should cover every feature of PlanetSet and provide some basic tutorial
 
 # Changelog
 
-## 2022.5 (Beta) - Yet to be released
+## 2022.5 (Beta) - 20/01/2023
 
-- **New:** Overhauled [water system](water.md): water is now created and controlled through the [water bodies] panel.
-- **New:** New realistic water shader with coloring options, displacement and [more]().
-- **New:** Terrain nodes [shortcut button]() in the geometry nodes panel.
+A little overdue, this update contains major improvements to the addon as well as some new features and content.
+
+- **New:** Overhauled [water system](water.md): water is now created and controlled through the [water bodies](water.md) panel.
+- **New:** New realistic water shader with volumetric coloring, ripples, foam and [more](water.md).
+- **New:** Oceans are now displaceable micropolygon surfaces like terrain.
+- **New:** Can convert your own objects to water bodies. Read more [here](water.md#user-water-bodies).
+- **New:** The dice rate setting is now in units of facets per pixel so that the subdivision can be precisely controlled. Read more [here](planet.md#dicing-rate).
+- **New:** There are now two dicing rate settings for the viewport and render modes. This allows the rendering of higher dicing rates in Cycles without affecting the viewport.
+- **New:** Terrain nodes [shortcut button](getting started.md#displacement-nodes) in the geometry nodes panel.
 - **New:** Option to center cloud domains over the 3D cursor when adding a new cloud layer.
 - **New:** Option to automatically switch to Cycles with optimal settings when PlanetSet is enabled. See [here](addon preferences.md#change-cycles-settings-on-init).
+- **New:** Reassign camera operator (found in search menu).
 - **Improved:** Generic cloud shader density is now modulated with height.
+- **Improved:** Improved scattering phase function in cloud shaders for more realistic cloud tones.
+- **Improved:** Atmospheric density values are in terms of a factor (default equal to 1) rather than the actual volume density measure.
+- **Improved:** You can now add cloud layers without enabling the atmosphere incase you would like to use alternative sky lighting.
+- **Improved:** Cloud domains are now represented by cylindrical bounds instead of wireframes.
+- **Improved:** General improvements to the underlying addon system.
 - **Fix:** Physical sky not switching back to Nishita sky after saving .blend file.
+- **Fix:** No UI handle for no active camera in scene.
 - **Docs:** New minimalist theme to the documentation website.
+- **Docs:** Improvements/amendments to existing documentation.
 
 ## 2022.4 (Beta) - 12/09/2022
 

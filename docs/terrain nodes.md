@@ -1,8 +1,12 @@
+# Creating Terrains with Geometry Nodes
+
 Once you have a flat planet surface, you can start creating terrain using geometry nodes. PlanetSet comes with some premade geometry node groups that can be combined to create various types of landscapes.
 
 Preset nodes can be found in the default displacement group.
 
 ---
+
+# Preset Terrain Geometry Nodes
 
 ## Power Noise Terrain
 
