@@ -16,6 +16,8 @@ nav:
     - Instancing: instancing.md
     - Water: water.md
     - Addon Preferences: addon preferences.md
+  - Example Scenes:
+    - 1 - Swamp Waters: ex1.md
 theme:
   name: material
   palette:
