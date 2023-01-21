@@ -1,4 +1,4 @@
-![PlanetSet](media/planetset_logo.png){: .center width=69%}
+![PlanetSet](media/planetset_logo_2022_5.png){: .center width=69%}
 
 # Welcome to PlanetSet
 
@@ -11,6 +11,8 @@ For installation instructions, see [getting started](getting started.md).
 # Changelog
 
 ## 2022.5 (Beta) - 20/01/2023
+
+![](media/planetset_logo_2022_5.png){: .center width=60%}
 
 A little overdue, this update contains major improvements to the addon as well as some new features and content.
 
