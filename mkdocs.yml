@@ -16,6 +16,9 @@ nav:
     - Instancing: instancing.md
     - Water: water.md
     - Addon Preferences: addon preferences.md
+  - Tutorials:
+    - Introduction to Terrain: tutorials/terrain introduction.md
+    - More Interesting Noises: tutorials/canyons.md
   - Example Scenes:
     - 1 - Swamp Waters: ex1.md
 theme:
