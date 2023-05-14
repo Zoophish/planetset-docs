@@ -29,9 +29,9 @@ Cloud layers have separate settings for the domain and cloud shader. The domain 
 
 # Cloud Layer Types
 
-## Generic Clouds
+## Simple Clouds
 
-![Generic Clouds](media/generic_clouds.jpg)
+![Simple Clouds](media/generic_clouds.jpg)
 
 This cloud layer can be used to recreate many different types of clouds by altering the parameters. The cloud domain contains the cloud shader medium. It is a cylinder that follows the curvature of the planet when the radius is large enough, meaning clouds may extend over the horizon.
 
@@ -89,11 +89,9 @@ This parameter stretches the cloud shader domain, causing clouds either to look 
 
 ---
 
-## Billow Clouds
+## Warp Clouds
 
-![Billow Clouds](media/billow_clouds.jpg)
-
-This cloud layer is similar to generic clouds, but uses a billow fractal that can produce more natural looking cloud shapes.
+This cloud shader is like simple clouds, but more realistic at the expense of render time. It can be used generically for cumulus and stratus clouds.
 
 ### Settings
 
@@ -140,7 +138,7 @@ Controls the strength of the billow pattern on the cloud details.
 Controls how abrupt the cloud edges are (makes the edges more dense). Higher values will make the clouds a more homogeneous (uniform) density.
 
 **Edge Darkness**  
-Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powdery' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look artificially dark.
+Artificially increases the darkness of the exterior parts of the clouds, giving them a 'powdery' look. This effect is more prominent when the step rate decreases, so be careful not to increase it too much or it will make the clouds look artificial.
 
 **Dark Edge Sharpness**  
 Defines the sharpness of the dark edges. Higher values will make the dark regions on the edges sharper, but also decrease the overall darkness.

@@ -1,14 +1,42 @@
-![PlanetSet](media/planetset_logo_2022_5.png){: .center width=69%}
+![PlanetSet](media/planetset_logo_2023_1.png){: .center width=69%}
 
-# Welcome to PlanetSet
+## Welcome to PlanetSet
 
-Thanks for buying PlanetSet! If you encounter any bugs or issues please contact me on [BlenderMarket](https://blendermarket.com/) or in the [PlanetSet Discord](https://discord.gg/d5CCkh5pJs).
+PlanetSet is an addon for Blender that enables the creation of massive and detailed environments. It is the only terrain system for Blender that supports planet-scale landscapes, atmosphere and clouds.
 
-This version is a beta, so it is not fully featured and will have content updates.
+If you encounter any bugs or issues please get in contact via [BlenderMarket](https://blendermarket.com/) or in the [PlanetSet Discord](https://discord.gg/d5CCkh5pJs).
 
 For installation instructions, see [getting started](getting started.md).
 
-# Changelog
+# News
+
+## 2023.1 (Beta) - TBR
+
+![](media/planetset_logo_2023_1.png){: .center width=60%}
+
+**Major Licensing Changes:**
+
+PlanetSet is now **Free to Learn** for non-commercial use!
+
+[PlanetSet on BlenderMarket](https://blendermarket.com/products/planetset).
+
+PlanetSet's userbase did not grow as expected since its launch, and the lack of feedback has made development challenging. Having a steep learning curve, particularly with geometry nodes, the limited number of users hindered knowledge sharing among artists. The current objective is to remove this obstacle by making the software free to learn for non-commercial purposes, allowing more artists to try it out and potentially purchase a commercial license in the future. 
+
+Thank you to everyone who has purchased the hobbyist version of PlanetSet. Your support has been crucial in the significant improvements made to the addon since its initial release. Paid users will still receive priority help, early updates and potentially exclusive features in future releases.
+
+If you find PlanetSet useful and you'd like to support its development, please consider purchasing a paid copy :).
+
+Changes:
+
+- **New:** Warp cloud shader (faster & improved pattern, replaces Billow Clouds).
+- **New:** Altowarp clouds (Warp clouds with breakup and waves).
+- **New:** Clouds now have a seed parameter for quickly iterating through looks.
+- **New:** Shear displacement node.
+- **Improved:** Default render dicing rate changed to 3.
+- **Improved:** Numerous improvements to the addon code.
+- **Changed:** Generic Clouds renamed to Simple Clouds.
+- **Fix:** Union node.
+- **Fix:** Subterrace node default parameters changes to working combination.
 
 ## 2022.5 (Beta) - 20/01/2023
 

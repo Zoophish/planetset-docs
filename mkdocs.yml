@@ -21,6 +21,7 @@ nav:
     - More Interesting Noises: tutorials/canyons.md
   - Example Scenes:
     - 1 - Swamp Waters: ex1.md
+    - 2 - Sea Pillars: ex2.md
 theme:
   name: material
   palette:

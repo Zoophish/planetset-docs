@@ -121,7 +121,7 @@ The xy scale of the stone center points (higher value increases stone frequency)
 
 ![](media/normal_displacement.jpg){: width=20% }
 
-Displaces the terrain geometry in the direction of the surface normal by the height input value. You would typically use a procedural pattern like noise to create endless displacement effects.
+Displaces the terrain geometry in the direction of the surface normal by the height input value which can be strengthened with the strength parameter. You would typically use a procedural pattern like noise to create endless displacement effects.
 
 The default displacement nodes consist of two normal displacement passes: one for the main large terrain features, and another for the ground details. You can use many displacement passes in series to create interesting effects.
 
