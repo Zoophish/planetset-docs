@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="VlY5LQx3WSzMSkRiDv5l8KkCWmLVzEgghgTUqdXYse4" />
-
 ![PlanetSet](media/planetset_logo_2023_1.png){: .center width=69%}
 
 ## Welcome to PlanetSet

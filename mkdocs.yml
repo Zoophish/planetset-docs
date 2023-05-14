@@ -24,6 +24,7 @@ nav:
     - 2 - Sea Pillars: ex2.md
 theme:
   name: material
+  custom_dir: overrides
   palette:
     primary: black
   logo: assets/planetset_header_logo.png
