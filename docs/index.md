@@ -1,3 +1,5 @@
+<meta name="google-site-verification" content="VlY5LQx3WSzMSkRiDv5l8KkCWmLVzEgghgTUqdXYse4" />
+
 ![PlanetSet](media/planetset_logo_2023_1.png){: .center width=69%}
 
 ## Welcome to PlanetSet
@@ -10,7 +12,7 @@ For installation instructions, see [getting started](getting started.md).
 
 # News
 
-## 2023.1 (Beta) - TBR
+## 2023.1 (Beta) - 14/05/2023
 
 ![](media/planetset_logo_2023_1.png){: .center width=60%}
 
