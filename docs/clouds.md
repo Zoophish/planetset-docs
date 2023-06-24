@@ -91,6 +91,8 @@ This parameter stretches the cloud shader domain, causing clouds either to look 
 
 ## Warp Clouds
 
+![Warp Clouds](./media/example-scenes/warp_clouds_demo_1.jpg)
+
 This cloud shader is like simple clouds, but more realistic at the expense of render time. It can be used generically for cumulus and stratus clouds.
 
 ### Settings

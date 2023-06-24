@@ -47,4 +47,4 @@ The Nishita sky model is the default sky model built into Blender which users ma
 
 ![](media/space.jpg)
 
-Enabling the physical atmosphere will often provide more realstic results, since all the sky color contribution comes from the atmosphere volume shader. It is particularly effective at high altitude shots and sunset/dawn shots. It also makes very high-altitude clouds look more realistic. You can also control the ozone layer density, which gives more control over the lighting color at sunset/sunrise.
+Enabling the physical atmosphere will yield a slightly different result since all the sky color contribution comes from the atmosphere volume shader. It is particularly effective at high altitude shots and sunset/dawn shots. It also makes very high-altitude clouds look more realistic. You can also control the ozone layer density, which gives more control over the lighting color at sunset/sunrise. Note, because all of the lighting contribution comes from the volume shader, it takes much longer for the renders to converge when the sun angle is low. 

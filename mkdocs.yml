@@ -19,6 +19,7 @@ nav:
   - Tutorials:
     - Introduction to Terrain: tutorials/terrain introduction.md
     - More Interesting Noises: tutorials/canyons.md
+    - Erosion Fractal: tutorials/erosion fractal.md
   - Example Scenes:
     - 1 - Swamp Waters: ex1.md
     - 2 - Sea Pillars: ex2.md
@@ -28,7 +29,7 @@ theme:
   palette:
     primary: black
   logo: assets/planetset_header_logo.png
-copyright: Copyright &copy; 2022 Sam Warren
+copyright: Copyright &copy; 2022-2023 Sam Warren
 markdown_extensions:
   - attr_list
   - admonition

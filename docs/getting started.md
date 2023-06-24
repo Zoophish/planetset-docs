@@ -35,6 +35,8 @@ Upon enabling the planet, there must be a camera present in the scene. PlanetSet
 
 The terrain generation process has some latency, depending on the [dicing rate](planet.md#dice-rate). You can [freeze](planet.md#freeze) the terrain to move the camera around without the latency, then unfreeze it when finished. Alternatively, you can find the view you want using the viewport flycam, then use the [Align Camera to View](https://docs.blender.org/manual/en/2.79/editors/3dview/navigate/align.html#align-view-menu) operator to change the cmaera view to the viewport view.
 
+The terrain is diced relative to the pixel size in the camera image plane. Therefore, if you specify a higher [render resolution](https://docs.blender.org/manual/en/latest/render/output/properties/format.html#format), the terrain will be subdivided more and vice versa for a lower resolution image.
+
 You might see [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) on distant terrain features due to the increased depth buffer limit. This artifact is only visible in the viewport preview and will not appear in the Cycles render. This way, you can see terrain features many kilometers away in the viewport. You can change the depth buffer settings in the [addon preferences](addon preferences.md).
 
 ### Displacement Nodes
@@ -64,6 +66,8 @@ Displacement works similarly to how it would normally in Blender, but by instead
 Displacement is typically done along the surface normal, but you can use the [vector displacement node](terrain nodes.md#vector-displacement) to displace along any arbitrary direction.
 
 Displacements can be stacked in multiple passes. The default node network has two displacement passes: the first for the main terrain and the second for ground details.
+
+See the [tutorials](./tutorials/terrain%20introduction.md) for more information about Geometry Nodes terrain.
 
 <! --- ### Working with Fractals
 

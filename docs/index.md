@@ -10,6 +10,21 @@ For installation instructions, see [getting started](getting started.md).
 
 # News
 
+## 2023.2 (Beta) - 24/06/2023
+
+Changes:
+
+- **New:** Improved Mie lobe volume shader on all cloud layers.
+- **New:** Seed parameter on the Plant Instancer for quickly iterating through new distributions.
+- **New:** Option in atmosphere settings to disable the Nishita sky texture and use a custom one.
+- **Improved:** Water shader improvements:
+    - Water shader transmission easier for Cycles to integrate.
+    - Sediment absorption levels added to water shader.
+    - Better water edge foam shading with new sparsity parameter.
+- **Fix:** Plant instancer not correctly instancing selected collection.
+- **Changed:** Renamed Radial Heightfield to Image Heightmap.
+- **Changed:** Color management settings are no longer adjusted by the 'Adjust Cycles Settings' Operator. Film exposure is now adjusted to 0.1 to account for day brightness. This can be turned off in the addon preferences.
+
 ## 2023.1 (Beta) - 14/05/2023
 
 ![](media/planetset_logo_2023_1.png){: .center width=60%}

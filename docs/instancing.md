@@ -34,8 +34,11 @@ The position of the population.
 **Radius**  
 The range of the population.
 
+**Seed**
+Seeds the randomization of the instance distribution.
+
 **Clip to Camera**  
-If true, will not instance on any surface outside the camera view frustum.
+If true (1), will not instance on any surface outside the camera view frustum.
 
 **Min Scale**  
 Minimum random scale factor.

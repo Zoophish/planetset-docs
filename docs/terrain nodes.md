@@ -40,7 +40,7 @@ Increasing this value makes the variance change more harshly.
 **Offset**  
 The offset vector of the noise (in meters). Changes in the x and y will shift the noise features around along the planet surface.
 
-## Radial Heightfield
+## Image Heightmap
 
 If you wish to bring in satellite digital elevation maps or heightmaps from other terrain generation software, you can use this modifier. It radially masks the heightmap to blend it with the surrounding terrain.
 

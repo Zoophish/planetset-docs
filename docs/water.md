@@ -33,10 +33,16 @@ Shader ripples become slightly 'blurred' in the distance, which is an effect 3D 
 
 ![](media/water_ripples.jpg)
 
-**Transparency:** Higher values make the water surface appear more see-through by artificially increasing the transparency.
+**Transparency:** Higher values make the water appear clearer by artificially increasing the transparency.
 
-**Water Color:** The color of the water medium.
+**Water Color:** The absorption color of the water medium.
 
 **Color Strength:** The intensity of the water color.
 
-**Edge Foam Thickness:** The thickness of the foam effect around edges intersecting the water.
+**Sediment Base:** The base height of the sediment absorption. The sediment will gradually reduce up to the sediment top.
+
+**Sediment Top:** The upper height of the sediment absorption.
+
+**Edge Foam Thickness:** The thickness of the foam effect around edges intersecting the water. More specifically, the distance tolerance to a surface underneath the water surface that indicates foam should be present.
+
+**Foam Sparsity:** Higher values break up the foam pattern more, lower values fill the pattern.
