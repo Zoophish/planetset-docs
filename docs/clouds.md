@@ -6,7 +6,7 @@ The clouds panel is located in the atmosphere panel. To enable clouds, check the
 
 ![Clouds Panel](media/clouds_panel.jpg){: style="width: 35%"}
 
-If you used the `Adjust Cycles Settings` operator, the viewport [step rate](https://docs.blender.org/manual/en/latest/render/cycles/render_settings/volumes.html) will be set to 5 to speed up interactive rendering. This will make clouds look less detailed and also less dense, so it is a good idea to occasioanlly turn the step rate down to preview what the clouds will look like in the final render.
+If you used the `Adjust Cycles Settings` operator, the viewport [step rate](https://docs.blender.org/manual/en/latest/render/cycles/render_settings/volumes.html) will be set to 5 to speed up interactive rendering. This will make clouds look less detailed and also less dense, so it is a good idea to occasionally turn the step rate down to preview what the clouds will look like in the final render.
 
 ![Volume Settings](media/volumes_render_settings.jpg){: width=50% }
 
@@ -149,11 +149,11 @@ Defines the sharpness of the dark edges. Higher values will make the dark region
 
 ## Cirrus 2D
 
-High altitude strandy/wispy clouds. This cloud layer is a 2D approximation which works well at high altitudes.
+High altitude strand-like / wispy clouds. This cloud layer is a 2D approximation which works well at high altitudes.
 
 ### Settings
 
-**Alttiude**  
+**Altitude**  
 The altitude of the cloud plane.
 
 **Density**  

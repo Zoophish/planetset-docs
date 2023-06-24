@@ -8,7 +8,7 @@
 
 Oceans are water bodies that span the entire planet. They work like the terrain surface in that they are tessellated to the dicing rate.
 
-The ocean surface has its own separate displacement group like the planet terrain that can be found inside the Planet Ocean geometry nodes modifier. By default, there is a small noise displacement applied to mimick small waves.
+The ocean surface has its own separate displacement group like the planet terrain that can be found inside the Planet Ocean geometry nodes modifier. By default, there is a small noise displacement applied to mimic small waves.
 
 ### Parameters
 
@@ -29,7 +29,7 @@ This can be used to make smaller water bodies such as lakes or ponds.
 
 **Ripples Strength:** Controls the ripple intensity.
 
-Shader ripples become slightly 'blurred' in the distance, which is an effect 3D displaced ripples don't account for. Therefore it is reccommended to keep the ripple strength above zero for more realstic results, even if you are using displacement ripples.
+Shader ripples become slightly 'blurred' in the distance, which is an effect 3D displaced ripples don't account for. Therefore it is recommended to keep the ripple strength above zero for more realistic results, even if you are using displacement ripples.
 
 ![](media/water_ripples.jpg)
 

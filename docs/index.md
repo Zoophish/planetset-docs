@@ -44,7 +44,7 @@ If you find PlanetSet useful and you'd like to support its development, please c
 Changes:
 
 - **New:** Warp cloud shader (faster & improved pattern, replaces Billow Clouds).
-- **New:** Altowarp clouds (Warp clouds with breakup and waves).
+- **New:** Alto-warp clouds (Warp clouds with breakup and waves).
 - **New:** Clouds now have a seed parameter for quickly iterating through looks.
 - **New:** Shear displacement node.
 - **Improved:** Default render dicing rate changed to 3.
@@ -61,7 +61,7 @@ A little overdue, this update contains major improvements to the addon as well a
 
 - **New:** Overhauled [water system](water.md): water is now created and controlled through the [water bodies](water.md) panel.
 - **New:** New realistic water shader with volumetric coloring, ripples, foam and [more](water.md).
-- **New:** Oceans are now displaceable micropolygon surfaces like terrain.
+- **New:** Oceans are now displaceable micro-polygon surfaces like terrain.
 - **New:** Can convert your own objects to water bodies. Read more [here](water.md#user-water-bodies).
 - **New:** The dice rate setting is now in units of facets per pixel so that the subdivision can be precisely controlled. Read more [here](planet.md#dicing-rate).
 - **New:** There are now two dicing rate settings for the viewport and render modes. This allows the rendering of higher dicing rates in Cycles without affecting the viewport.
@@ -110,7 +110,7 @@ A little overdue, this update contains major improvements to the addon as well a
 
 - **New:** Novel [dicing method](planet.md#dice-rate) which provides almost perfect per-pixel dicing for more accurate details in terrain and micropolygon displacement without Cycles Experimental.
 - **New:** Terrain displacement is now carried out completely in geometry nodes with no modifier stacks, enabling greater control for artists (existing presets have been converted to node groups).
-- **New:** Terrain [clip option](planet.md#clip), which when enabled will discard terrrain geometry outside of the camera frustum. For high detail renders this can save a significant amount of memory.
+- **New:** Terrain [clip option](planet.md#clip), which when enabled will discard terrain geometry outside of the camera frustum. For high detail renders this can save a significant amount of memory.
 - **New:** More efficient and precise rectangular camera frustum clipping implementation with [padding](planet.md#padding) options.
 - **New:** Vector displacement (along geometry normals etc) is now properly supported and works with micropolygon dicing.
 - **New:** New options when adding a Plant Instancer to center to the 3D cursor and automatically create a collection from the selection.
