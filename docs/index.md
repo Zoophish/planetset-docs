@@ -1,4 +1,4 @@
-![PlanetSet](media/planetset_logo_2023_1.png){: .center width=69%}
+![PlanetSet](media/planetset_logo_2023_2.png){: .center width=69%}
 
 ## Welcome to PlanetSet
 
@@ -11,6 +11,8 @@ For installation instructions, see [getting started](getting started.md).
 # News
 
 ## 2023.2 (Beta) - 24/06/2023
+
+![](media/planetset_logo_2023_2.png){: .center width=60%}
 
 Changes:
 
