@@ -1,6 +1,6 @@
 # Populations
 
-Instancers can be used to automatically place many of the same objects in the scene. Instancers are called populations in PlanetSet and can be used via the populations sub panel. To add a population, use the `Add Population Instancer` menu.
+Instancers can be used to automatically place many of the same objects in the scene. Instancers create groups of instances called populations and can be controlled via the populations sub panel. To add a population, use the `Add Population Instancer` menu.
 
 ![Populations Panel](media/populations_panel.jpg){ width=50% }
 
