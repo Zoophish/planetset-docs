@@ -29,12 +29,12 @@ You can choose to automatically center the population at the 3D cursor or create
 The collection used to randomly select objects from to instance.
 
 **Center**  
-The position of the population.
+The central position of the population.
 
 **Radius**  
-The range of the population.
+The extent of the population region (from the center).
 
-**Seed**
+**Seed**  
 Seeds the randomization of the instance distribution.
 
 **Clip to Camera**  
@@ -58,18 +58,18 @@ Controls how much the instances should align to the surface normal.
 ![Normal Alignment](media/plant_instancer_normal_alignment.jpg)
 
 **Density**  
-The overall surface density of the instances.
+The overall density factor of the instances (how many instances per unit area are created). You may need to adjust this value if the other factors increase or decrease the overall density.
 
 **Altitude Factor**  
 How much influence altitude decay has on the density.
 
 **Exp Altitude**  
-The height in which the density decays to 36.7% its original density.
+The height in which the density decays to 36.7% its original density (as part of an exponential fall off).
 
 ![Exp Altitude](media/plant_instancer_exp_altitude.jpg)
 
 **Gradient Factor**  
-How much influence the surface steepness has on the density.
+How much influence the surface steepness has on the density. Higher values will reduce the density on steeper slopes.
 
 ![Gradient Factor](media/plant_instancer_gradient_factor.jpg)
 
