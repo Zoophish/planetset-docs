@@ -7,6 +7,7 @@ edit_uri: edit/master/docs/docs
 nav:
   - General:
     - Home: index.md
+    - Licensing: licensing.md
   - Manual:
     - Getting Started: getting started.md
     - Planet Terrain: planet.md
