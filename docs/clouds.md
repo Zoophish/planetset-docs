@@ -4,7 +4,7 @@
 
 The clouds panel is located in the atmosphere panel. To enable clouds, check the check box in the clouds panel header.
 
-![Clouds Panel](media/clouds_panel.jpg){: style="width: 35%"}
+![Clouds Panel](media/clouds_panel.jpg){: style="width: 50%"}
 
 If you used the `Adjust Cycles Settings` operator, the viewport [step rate](https://docs.blender.org/manual/en/latest/render/cycles/render_settings/volumes.html) will be set to 5 to speed up interactive rendering. This will make clouds look less detailed and also less dense, so it is a good idea to occasionally turn the step rate down to preview what the clouds will look like in the final render.
 
@@ -13,6 +13,8 @@ If you used the `Adjust Cycles Settings` operator, the viewport [step rate](http
 ---
 
 # Cloud Layers
+
+Cloud layers are 3D and 2D cylindrical or disk domains with cloud shaders. The domains and shaders follow the curvature of the planet, so large that cloudscapes (100s of km wide) can be rendererd.
 
 ## Moving Clouds
 
@@ -193,3 +195,33 @@ Similar to cloud coverage, lower values will create larger regions of no mist.
 
 **Noise Scale**  
 The scale of the mist fractal noise (lower values create larger patchy features).
+
+## Gobo Layer
+
+The Gobo layer is a 2D disk with a procedural cloud texture that casts cloud shadows onto the terrain. It is much faster at rendering shadows and god rays than using a volumetric cloud layer. 
+
+### Settings
+
+**Altitude**  
+Altitude of the disk cloud plane.
+
+**Radius**  
+Radius of the disk cloud plane.
+
+**Coverage**  
+Cloud coverage.
+
+**Scale**  
+Cloud texture scale factor (smaller scale factor produces larger features).
+
+**Softness**  
+Defines the size of the transition at the cloud edges.
+
+**Darkness**  
+The opaqueness of the clouds (also effects the darkness of the shadows).
+
+**Only Shadows**  
+Either true or false (1 or 0). If true, the cloud layer will not be directly visible, but will cast shadows.
+
+**Seed**  
+Random seed for the cloud texture.

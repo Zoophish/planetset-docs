@@ -2,13 +2,32 @@
 
 ## Welcome to PlanetSet
 
-PlanetSet is an addon for Blender that enables the creation of massive and detailed environments. It is the only terrain system for Blender that supports planet-scale landscapes, atmosphere and clouds.
+PlanetSet is an addon for Blender that enables the creation of massive and detailed environments. It is the only terrain system for Blender that provides the technical foundations for planet-scale landscapes, atmosphere and clouds.
 
 If you encounter any bugs or issues please get in contact via [BlenderMarket](https://blendermarket.com/) or in the [PlanetSet Discord](https://discord.gg/d5CCkh5pJs).
 
 For installation instructions, see [getting started](getting started.md).
 
 # News
+
+## 2024.1 (Beta) - 03/02/2024
+
+Changes:
+
+- **New:** Major improvements to the terrain dicing system:
+    - Geometry nodes repeat zones are now leveraged, allowing for much smaller surface details
+    - Significant speed and performance improvements through new geometry caching method
+    - Smooth subdivision surface now used (smooth interpolation of base geometry), with minimal performance impact
+    - Add custom base terrain geometry (e.g. use metablobs to create cliffs and overhangs)
+- **New:** Add custom base geometry to the terrain using an Aux Geometry collection. This allows the creation of highly detailed displaced cliffs, rocks & overhangs.
+- **New:** Control the time of day using latitude, longitude, date and time. All major worldwide timezones supported! Find out more [here](./atmosphere.md#atmosphere-settings).
+- **New:** Terrain mapping node for the shader editor (align height maps with color maps). See more [here](./tutorials/heightmaps.md#material-textures).
+- **New:** Maximum scattering bounces control for the atmosphere shader.
+- **New:** Aerosol absorption [tint and scatter](./atmosphere.md#atmosphere) strength parameters.
+- **New:** Gobo 2D cloud layer for fast cloud shadows.
+- **Improved:** Improved aerosol model for the atmosphere shader.
+- **Changed:** The terrain displacement nodes are blank by default now and the preset terrain nodes are stored in a separate .blend files to reduce clutter
+
 
 ## 2023.2 (Beta) - 24/06/2023
 

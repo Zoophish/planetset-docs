@@ -46,7 +46,9 @@ At a view height of 2m , the distance to the horizon is about 5km. At 10m, the d
 ![Altitude Bias](media/altitude_bias_diagram.svg)
 
 ### Clip
-If enabled, will discard planet geometry outside the camera frustum. This can save some memory and terrain processing time as well as help with shading effects that rely on geometry outside the camera frustum. You can additionally extend the limits of the camera frustum clipping by changing the padding settings.
+If enabled, will discard planet geometry outside the camera frustum. This can save some memory and reduce terrain latency, but some shading effects may benefit on having geometry outside the camera frustum. You can additionally extend the limits of the camera frustum clipping by changing the padding settings.
+
+![](media/clip_on_off.jpg)
 
 ### Padding
 Specifies the horizontal and vertical padding for the camera frustum. Can be used to remove gaps near the view edges and to account for significant features near the frustum edges.
@@ -54,9 +56,12 @@ Specifies the horizontal and vertical padding for the camera frustum. Can be use
 ### Freeze
 When enabled, the terrain will not update. This can be useful when moving the active camera or making changes without the latency of the planet geometry updates.
 
-!!! Tip
-    To keep the displacement node tree open when the terrain is frozen you must pin it in the node editor, otherwise it will disappear until the terrain is unfrozen.
-    ![](media/pin_node_tree.jpg){: width=50% }
+To keep the displacement node tree open when the terrain is frozen you must pin it in the node editor, otherwise it will disappear until the terrain is unfrozen.
+
+![](media/pin_node_tree.jpg){: width=50% }
+
+### Aux Geometry (Advanced)
+Another collection of base geometry can be used in addition to the planet surface, e.g. metablobs to create rock formations. All the geometry inside the aux collection will copied into the tessellated geometry then diced and displaced like the terrain. You should disable the collection's visibility in the outliner for both the viewport and render. Either geometry node IDs or named integer attributes can be used to distinguish geometry in the displacement nodes (the planet surface has ID = 0).
 
 ## Planet Settings
 

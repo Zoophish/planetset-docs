@@ -6,11 +6,9 @@
 
 ## Oceans
 
-Oceans are water bodies that span the entire planet. They work like the terrain surface in that they are tessellated to the dicing rate.
+Oceans are water bodies that span the entire planet. Like the terrain surface, it is also tessellated to the dicing rate.
 
-The ocean surface has its own separate displacement group like the planet terrain that can be found inside the Planet Ocean geometry nodes modifier. By default, there is a small noise displacement applied to mimic small waves.
-
-### Parameters
+The ocean surface has its own separate displacement group like the planet terrain that can be found inside the Planet Ocean geometry nodes modifier. By default, there is a small noise displacement applied to mimic small waves. If you have the Hobbyist or Professional edition of PlanetSet, you will have access to the ocean displacement texture which can be used to create realistic animated waves.
 
 **Sea Level:** The height of the ocean surface above zero in the z axis.
 

@@ -7,20 +7,25 @@ edit_uri: edit/master/docs/docs
 nav:
   - General:
     - Home: index.md
-    - Licensing: licensing.md
+    - Version Comparison & Licensing: licensing.md
+  # - Blog:
+  #   - "2023":
+  #     - (25/08/2023) Tessellations: blog/terrain_tessellation.md
   - Manual:
     - Getting Started: getting started.md
     - Planet Terrain: planet.md
     - Terrain Nodes: terrain nodes.md
-    - Atmosphere: atmosphere.md
+    - Sky & Atmosphere: atmosphere.md
     - Clouds: clouds.md
     - Instancing: instancing.md
     - Water: water.md
     - Addon Preferences: addon preferences.md
   - Tutorials:
     - Introduction to Terrain: tutorials/terrain introduction.md
-    - More Interesting Noises: tutorials/canyons.md
+    - Understanding Dicing: tutorials/dicing.md
+    - Procedural Basics: tutorials/canyons.md
     - Erosion Fractal: tutorials/erosion fractal.md
+    - Importing Heightmaps: tutorials/heightmaps.md
   - Example Scenes:
     - 1 - Swamp Waters: ex1.md
     - 2 - Sea Pillars: ex2.md
@@ -40,5 +45,9 @@ markdown_extensions:
 #use_directory_urls: False
 extra_css:
   - extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 extra_javascript:
   - extra.js
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
