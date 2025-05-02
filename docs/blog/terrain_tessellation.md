@@ -1,28 +1,33 @@
-Blender ships with its capable Cycles renderer as well as a suite of geometry manipulation and scene creation tools. Modelling terrain surfaces manually is time-consuming and repetitive. This is why the introduction of geometry nodes in 3.0 was so important, as it allows things like this to be automated. The two terrain components I thought that needed automating were scale and detail. I addressed this using a combination of the Python API and geometry nodes, taking inspiration from software like Terragen and the older REYES renderers.
+When geometry nodes were introduced in Blender 3.0, a range of things were suddenly possible with automation, specifically algorithmically-generated meshes that would be impossible or very time consuming for a human to make. Unlike the Blender Python API, geometry nodes are fully integrated with all data types within a scene, which makes it very powerful. Moreover, it's actually quite well optimised. This lends itself to two aspects of natural environment renders that are important: scale and detail.
 
-#### Method
+In order to simulate realistic horizons, the terrain’s surface needs to be spherical—resembling a planet. Since large portions of the sphere will be hidden from the viewer on the surface, generating the entire sphere is unnecessary. The approach I’ve implemented in PlanetSet involves projecting a large plane downward onto the sphere, originating from the plane's center. This retains floating-point precision closer to the viewer. The plane itself consists of quads that tessellate in a grid-like fashion, with the base-size of these quads scaled according to the viewer’s altitude to maintain a near-constant size in screenspace.
 
-To produce realistic horizons, the terrain's surface must be spherical like a planet. Since most of the sphere will be occluded by itself, we don't need the entire thing. The approach used in PlanetSet is to take a large plane and project it downwards onto a sphere. By projecting it downwards from the centre of the plane, we maintain floating point precision at the peak where the viewer is most likely to be. The plane is made up of quads that tessellate nicely. The quad size is scaled based on how high the viewer is, to ensure consistent tessellation (more on this later).
-
-![]()
-
-We need to ensure that the plane is large enough such that some terrain goes beyond visible curvature. One simple way of doing this is to figure out the distance from the viewer to the tangent of the planet sphere:
+The next step is ensuring that the plane is sufficiently large so that a portion of the terrain extends beyond the visible curvature of the planet. The approach used is to calculate the distance from the viewer to the tangent point on the planet’s surface, which is $d = \sqrt{2Rh + h^2}$:
 
 ![](./GeometricDistanceToHorizon.png)
 
-Which is simply 
-
-
-Since the surface of the planet is not perfectly smooth, we can add on a fudge factor to the height to create slightly more terrain over the horizon. This is what the altitude bias parameter does in PlanetSet.
+To account for large surface features like mountains that might peak over the horizon, an altitude bias is added, which extends the terrain slightly beyond the horizon distance.
 
 ![](./sphere_section.png){: width=500pt}
 
-The next step is detail. If we were to equally subdivide the entire terrain surface, we would quickly run out of memory as the surface area of the terrain is far too large to have a fixed number of faces per unit area. Instead, we can subdivide the geometry relative to the camera, since *most* mesh detail is directly perceived in the image space rather than world space. The exceptions here are mainly shading effects like shadows and reflections from outside the camera frustum and distant surface roughness that could affect the sub-pixel shading.
+Uniformly subdividing the entire terrain surface would be prohibitively inefficient, as the surface area of a planet is far too vast to maintain a fixed number of faces per unit area. Instead, a form of adaptive subdivision is used, a technique that refines geometry based on the proximity to the camera. Because geometric detail is mostly perceived in screenspace, the level of subdivision should be tied to the camera’s view rather than world space. This is a lot like the REYES method and the approach used by Terragen.
 
-To know whether to dice (subdivide) a quad face, we need to measure its projected area in screen space. If the projected area is larger than the dicing rate (facets per pixel), we dice it. This is approximated in PlanetSet using the inverse square law multiplied by the cosine of its angle to the camera (which actually turns out to be a simple dot product). In PLanetSet, I scale this result by some magic constants, which were found empirically, to make it in terms of more intuitive units. Since displacing the terrain will significantly affect how the surface projects onto the image space, the face area measurements need to occur on the displaced surface (consider how going from a flat sphere to huge mountains would change the face projections for example). This means we first displace the smooth sphere surface, figure out which faces need to be diced, then dice the *un-displaced* smooth surface based on this information. This cycle is repeated until all facets are small enough in image space, or we have reached the iteration limit. We also omit faces outside the camera frustum for more efficiency (using the quad centroids to check). We can optionally discard geometry outside the camera frustum. I've found that for whatever reason, this is significantly faster, even though most of the geometry is inside the camera frustum.
+This method is slightly flawed when accounting for global shading effects like shadows and reflections, which may involve regions outside the camera frustum.  A low-resolution representation of terrain outside of the view frustum suffices in most cases (setting clip to off does this).
+
+To determine whether a given quad face should be subdivided (or "diced"), its projected area in screen space is evaluated. If the projected area exceeds the dicing threshold (a set number of facets per pixel), it is subdivided. This is approximated using an inverse-square law of the distance between the camera origin and the face centroid, further scaled by the cosine of the angle of the face relative to the camera forward vector. The final scaling factor is fine-tuned using empirically derived constants, converting the result artist-friendly units.
+
+![](./quad_scaling.svg){: width=800pt }
+
+$$scaling =  \frac{\hat{V}\cdot\hat{N}}{d^2}$$
+
+The projected area of a face can change dramatically when surface displacement—such as raising mountains—is applied. As such, the face areas are recalculated after displacing the smooth sphere surface, and the geometry is subdivided accordingly. This subdivision loop continues until all faces are sufficiently small in screen space or an iteration limit is reached.
+
+Faces outside the camera frustum are skipped by comparing the angles between the frustrum angles and the face centroids. The transition angle overwhich the coarsest faces tessellate into the finest faces is accounted for. Optionally, geometry entirely outside the frustum can be discarded, a step that generally improves performance, even when most of the geometry remains visible within the frame.
+
+![](./FOV.svg){: width=800pt }
 
 ![](./tessellation_wireframe.png){: width=800pt }
 
-Going forwards, Blender 4.0 will feature repeat nodes and caching checkpoints in geometry nodes, which will allow this process to be done much more efficiently.
+Something else that is interesting is that sub-pixel surface imperfections that are very far in the distance would change the effective distribution of the BSDF - this an effect can be approximated using shader tricks. Another limitation is that the 'projection' into screen space is an approximation, so artifacts might be visible in wide-angle or panoramic cameras, something that could potentially be resolved using camera matrices.
 
-I also am hoping that at some point in the future, it will be possible to selectively subdivide faces rather than splitting the mesh and subdividing. This would prevent light leaks in the terrain surface which is currently a frustrating limitation.
+Blender 4.0 introduces new features like repeat nodes and caching checkpoints within geometry nodes, which significantly speeds up parts of the terrain tessellation process. A current limitation is that selective subdivisions in geometry nodes require splitting the terrain mesh, which can create light leak artifacts - I'd be interested in seeing selective subdivision implemented natively.

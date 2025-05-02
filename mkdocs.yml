@@ -8,9 +8,9 @@ nav:
   - General:
     - Home: index.md
     - Version Comparison & Licensing: licensing.md
-  # - Blog:
-  #   - "2023":
-  #     - (25/08/2023) Tessellations: blog/terrain_tessellation.md
+  - Blog:
+    - "2024":
+      - (25/08/2024) The Terrain Algorithm Basics: blog/terrain_tessellation.md
   - Manual:
     - Getting Started: getting started.md
     - Planet Terrain: planet.md
@@ -40,6 +40,9 @@ markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.keys
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
   - toc:
       permalink: true
 #use_directory_urls: False
@@ -48,6 +51,5 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 extra_javascript:
   - extra.js
-  - javascripts/katex.js 
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js

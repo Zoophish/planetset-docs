@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 .left {
   float: left;
 }
@@ -23,4 +25,16 @@
 
 .zoom:hover {
   transform: scale(1.5);
+}
+
+p {
+  text-align: justify;
+}
+
+
+blogbody {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

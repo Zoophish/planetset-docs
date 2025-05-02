@@ -1,5 +1,3 @@
-![PlanetSet](media/planetset_logo_2023_2.png){: .center width=69%}
-
 ## Welcome to PlanetSet
 
 PlanetSet is an addon for Blender that enables the creation of massive and detailed environments. It is the only terrain system for Blender that provides the technical foundations for planet-scale landscapes, atmosphere and clouds.
@@ -9,6 +7,27 @@ If you encounter any bugs or issues please get in contact via [BlenderMarket](ht
 For installation instructions, see [getting started](getting started.md).
 
 # News
+
+## 2025.1 - 04/04/2025
+
+![](media/planetset_logo_2025_1.png){: .center width=60%}
+
+Changes:
+
+- **New:** Atmosphere rendering is significantly better with the Blender 4.4 Cycles updates:
+    - The physical atmosphere now renders correctly over large, sparse volumes, achieving close results to the analytical Nishita sky texture.   
+    - Significant improvements in water aerosols rendering with low-density, highly-anisoptropic media.   
+    - The atmosphere and cloud shaders now leverage the new phase functions (Rayleigh and Mie) natively in Cycles.   
+- **New:** Procedural stars are now rendered with the Physical Atmosphere enabled and are parameterisable through the Star Panel.   
+- **New:** Pattern Noise geometry node preset. Stamps image textures randomly for more interesting fractal textures.   
+- **Fix** Added missing node presets to the node_presets.blend file.   
+- **Fix** Sky and atmosphere parameters not updating correctly over key frames.   
+- **Changed** Improved the arrangement of the atmosphere & sky panel UI.   
+- **Changed** Cycles settings now change when initilializing a planet by default (can be turned off in the addon preferences).   
+- **Changed** PlanetSet should now register as an extension.   
+- **Improved** Some minor optimisations to the terrain system.   
+- **Improved** The PlanetSet Cycles settings configuration is faster and better suited to atmosphere rendering.   
+
 
 ## 2024.1 (Beta) - 03/02/2024
 
